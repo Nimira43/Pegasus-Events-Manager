@@ -10,3 +10,15 @@
 body {
   background-color: #ffffe0;
 }
+
+.ui.fixed.menu {
+  background: #000;
+}
+
+.ui.fixed.menu button {
+  background: #ff4500;
+}
+
+.ui.main.container {
+  margin-top: 7em;
+}
