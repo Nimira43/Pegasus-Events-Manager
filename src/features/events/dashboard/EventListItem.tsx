@@ -32,7 +32,7 @@ export default function EventListItem() {
       </Segment>
       <Segment clearing>
         <span>Description of the event</span>
-        <Button color='black' floated='right' />
+        <Button color='black' floated='right' content='View' />
       </Segment>
     </SegmentGroup>
   )
