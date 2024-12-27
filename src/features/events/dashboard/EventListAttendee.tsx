@@ -1,4 +1,4 @@
-import { Image, List } from "semantic-ui-react";
+import { Image, List } from 'semantic-ui-react';
 
 export default function EventListAttendee() {
   return (

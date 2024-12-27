@@ -1,9 +1,9 @@
-import { Button, Container, Menu, MenuItem } from "semantic-ui-react";
+import { Button, Container, Menu, MenuItem } from 'semantic-ui-react';
 
 export default function NavBar() {
   return (
     <Menu inverted={true} fixed='top'>
-      <Container>
+      <Container className='navbar-container'>
         <MenuItem header>
           <img src='/logo1.png' alt='logo' />
         </MenuItem>

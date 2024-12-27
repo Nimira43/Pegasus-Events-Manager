@@ -1,4 +1,4 @@
-import { Button, Form, Header, Segment } from "semantic-ui-react";
+import { Button, Form, Header, Segment } from 'semantic-ui-react'
 
 export default function EventForm() {
   return (
