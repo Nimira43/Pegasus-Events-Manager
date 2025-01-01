@@ -1,5 +1,12 @@
+import EventListItem from "./EventListItem";
+
 export default function EventList() {
   return (
-    <div>EventList</div>
+    <>
+      <EventListItem />
+      <EventListItem />
+      <EventListItem />
+      <EventListItem />
+    </>
   )
 }
