@@ -4,7 +4,7 @@ export default function EventList(props: any) {
   return (
     <>
       {props.events.map((event: any) => (
-        <EventListItem event={event} />
+        <EventListItem key={event.id} event={event} />
       ))}
       
     </>
