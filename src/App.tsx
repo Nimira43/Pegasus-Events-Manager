@@ -1,7 +1,9 @@
 function App() {
   return (
     <>
-      <h1>Pegasus</h1>
+      <h1 className='logo'>Pegasus</h1>
+      <hr />
+      <p>Events Manager</p>
     </>
   )
 }
