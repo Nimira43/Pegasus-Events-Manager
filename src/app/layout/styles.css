@@ -2,6 +2,10 @@
 
 @import url('semantic-ui-css/semantic.min.css');
 
+body {
+  background-color: #e6fafa;  /* very light teal */
+}
+
 h1, h2, h3, h4, h5, h6, p,
 a, i, li,
 header, footer,
@@ -11,14 +15,13 @@ input, form, label, textarea, button, select, option{
   font-weight: 300;
 }
 
-.font {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300
+.ui.fixed.menu {
+  background-color: #111;
+  color: #ddd;
 }
 
-.heading {
-  color: #ddd;
-  font-weight: 400;
+.ui.main.container {
+  margin-top: 7em;
 }
 
 .logo {

@@ -8,11 +8,9 @@ export default function NavBar() {
             <img src='/logo1.png' alt='logo'></img>
             <span className='logo'>Pegasus</span>
           </MenuItem>
-          <MenuItem>
-            <span className='heading'>Events</span>
-          </MenuItem>
+          <MenuItem name='Events' />
           <MenuItem >
-            <Button floated='right' basic inverted color='teal' >
+            <Button floated='right' basic inverted color='teal'>
               <span className='btn'>Create Event</span>
             </Button>
           </MenuItem>
