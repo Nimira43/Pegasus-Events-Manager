@@ -33,6 +33,12 @@ input, form, label, textarea, button, select, option{
   letter-spacing: 2px;
 }
 
+.heading {
+  font-weight: 400;
+  color: #ddd;
+  letter-spacing: 0.5px;
+}
+
 .btn {
   color: #ddd;
   font-weight: 400;
