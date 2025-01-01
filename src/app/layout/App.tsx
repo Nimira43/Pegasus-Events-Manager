@@ -1,22 +1,11 @@
-import { Button } from 'semantic-ui-react'
+import EventDashboard from '../../features/events/dashboard/EventDashboard'
 
 function App() {
   return (
-    <>
-      <h1 className='logo'>Pegasus</h1>
-      <hr />
-      <p>Events Manager</p>
-        <Button
-          icon='user'
-          content='Login' 
-          color='orange'
-        />
-        <Button
-          icon='user'
-          content='Logout' 
-          color='black'
-        />
-    </>
+    <div>
+      <h1 className='logo'>Pegasus Events Manager</h1>
+      <EventDashboard />
+    </div>
   )
 }
 
