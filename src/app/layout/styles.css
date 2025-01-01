@@ -2,8 +2,19 @@
 
 @import url('semantic-ui-css/semantic.min.css');
 
+:root {
+  --dark: #111;
+  --light: #fffaf0;
+  --teal-light: #e6fafa;
+  --teal: teal;
+  --teal-dark: 012222;
+  --bg-text-light: #ddd;
+  --primary-dark: #333;
+}
+
 body {
-  background-color: #e6fafa;  /* very light teal */
+  background-color: var(--teal-light);
+  color: var(--dark);
 }
 
 h1, h2, h3, h4, h5, h6, p,
@@ -16,8 +27,7 @@ input, form, label, textarea, button, select, option{
 }
 
 .ui.fixed.menu {
-  background-color: #111;
-  color: #ddd;
+  background-color: var(--dark);
 }
 
 .ui.main.container {
@@ -25,7 +35,7 @@ input, form, label, textarea, button, select, option{
 }
 
 .logo {
-  color: #ddd;
+  color: var(--bg-text-light);
   font-family: 'Great Vibes', serif;
   font-weight: lighter;
   font-size: 1.7rem;
@@ -35,12 +45,12 @@ input, form, label, textarea, button, select, option{
 
 .heading {
   font-weight: 400;
-  color: #ddd;
+  color: var(--bg-text-light);
   letter-spacing: 0.5px;
 }
 
 .btn {
-  color: #ddd;
+  color: var(--bg-text-light);
   font-weight: 400;
   text-transform: uppercase;
 }
