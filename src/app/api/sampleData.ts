@@ -3,31 +3,31 @@ export const sampleData = [
     id: '1',
     title: 'Birthday party for Megan',
     date: '2025-01-19',
-    category: 'culture',
+    category: 'dinner',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, illum explicabo enim suscipit ab nisi molestiae porro recusandae libero voluptatum facere deserunt omnis!',
     city: 'Manchester, UK',
     venue: 'Vanessa Dobson, 29 Romford Road, Manchester, UK',
     hostedBy: 'Vanessa',
     hostPhotoURL: 'https://randomuser.me/api/portraits/women/82.jpg',
     attendees: [
-        {
-            id: 'a',
-            name: 'Megan',
-            photoURL: 'https://randomuser.me/api/portraits/women/11.jpg'
-        },
-        {
-            id: 'b',
-            name: 'Danny',
-            photoURL: 'https://randomuser.me/api/portraits/men/73.jpg'
-        },
-        {
-            id: 'c',
-            name: 'Phil',
-            photoURL: 'https://randomuser.me/api/portraits/men/38.jpg'
-        }
+      {
+        id: 'a',
+        name: 'Megan',
+        photoURL: 'https://randomuser.me/api/portraits/women/11.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Danny',
+        photoURL: 'https://randomuser.me/api/portraits/men/73.jpg'
+      },
+      {
+        id: 'c',
+        name: 'Phil',
+        photoURL: 'https://randomuser.me/api/portraits/men/38.jpg'
+      }
     ]
-},
-{
+  },
+  {
     id: '2',
     title: 'Darts at the Fox and Goose',
     date: '2025-02-21',
@@ -50,4 +50,4 @@ export const sampleData = [
       }
     ]
   }
-];
+]
