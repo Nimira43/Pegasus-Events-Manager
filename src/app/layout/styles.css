@@ -16,10 +16,22 @@ input, form, label, textarea, button, select, option{
   font-weight: 300
 }
 
+.heading {
+  color: #ddd;
+  font-weight: 400;
+}
+
 .logo {
+  color: #ddd;
   font-family: 'Great Vibes', serif;
   font-weight: lighter;
   font-size: 1.7rem;
   padding-left: 6px;
   letter-spacing: 2px;
+}
+
+.btn {
+  color: #ddd;
+  font-weight: 400;
+  text-transform: uppercase;
 }
