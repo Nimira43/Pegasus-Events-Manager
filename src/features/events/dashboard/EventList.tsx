@@ -1,12 +1,12 @@
-import EventListItem from "./EventListItem";
+import EventListItem from './EventListItem'
 
-export default function EventList() {
+export default function EventList(props: any) {
   return (
     <>
-      <EventListItem />
-      <EventListItem />
-      <EventListItem />
-      <EventListItem />
+      {props.events.map((event: any) => (
+        <EventListItem event={event} />
+      ))}
+      
     </>
   )
 }
