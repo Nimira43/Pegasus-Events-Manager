@@ -33,7 +33,7 @@ export default function EventListItem({event}: any) {
         </List>
       </Segment>
       <Segment clearing>
-        <span>Description of Event</span>
+        <span>{event.description}</span>
         <Button color='teal' floated='right'>
           <span className='btn'>View</span>
         </Button> 
