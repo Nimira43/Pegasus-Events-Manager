@@ -1,9 +1,10 @@
 import EventDashboard from '../../features/events/dashboard/EventDashboard'
+import NavBar from './nav/NavBar'
 
 function App() {
   return (
     <div>
-      <h1 className='logo'>Pegasus Events Manager</h1>
+      <NavBar />
       <EventDashboard />
     </div>
   )
