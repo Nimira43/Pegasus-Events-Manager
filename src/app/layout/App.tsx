@@ -7,12 +7,12 @@ function App() {
   const [formOpen, setFormOpen] = useState(false)
   
   return (
-
-
     <>
-      <NavBar />
+      <NavBar setFormOpen={setFormOpen}/>
       <Container className='main'>
-        <EventDashboard formOpen={formOpen} />
+        <EventDashboard 
+          formOpen={formOpen} 
+          setFormOpen={setFormOpen}/>
       </Container>
     </>
   )
