@@ -34,7 +34,7 @@ export const sampleData = [
     category: 'drinks',
     description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In optio fugiat nesciunt illo natus dolore et numquam distinctio eveniet, impedit quam aliquam. Ea, cumque laudantium.',
     city: 'Birmingham, UK',
-    venue: 'Fox and Goose, 23 MainStreet, Birmingham, UK',
+    venue: 'Fox and Goose, 23 Main Street, Birmingham, UK',
     hostedBy: 'Mick',
     hostPhotoURL: 'https://randomuser.me/api/portraits/men/59.jpg',
     attendees: [

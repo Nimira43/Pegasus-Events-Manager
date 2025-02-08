@@ -10,6 +10,7 @@
   --teal-dark: 012222;
   --bg-text-light: #ddd;
   --primary-dark: #333;
+  --grey: #999;
 }
 
 body {
@@ -53,4 +54,12 @@ input, form, label, textarea, button, select, option{
   color: var(--bg-text-light);
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.bordering {
+  border: 1px solid var(--grey) !important;
+}
+
+input::placeholder {
+  color: var(--grey) !important;
 }

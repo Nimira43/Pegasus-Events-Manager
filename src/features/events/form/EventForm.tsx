@@ -12,22 +12,22 @@ export default function EventForm({setFormOpen}: Props) {
       </Header>
       <Form>
         <Form.Field>
-          <input type='text' placeholder='Event Title' />
+          <input className='bordering' type='text' placeholder='Event Title' />
         </Form.Field>
         <Form.Field>
-          <input type='text' placeholder='Category' />
+          <input className='bordering' type='text' placeholder='Category' />
         </Form.Field>
         <Form.Field>
-          <input type='text' placeholder='Description' />
+          <input className='bordering' type='text' placeholder='Description' />
         </Form.Field>
         <Form.Field>
-          <input type='text' placeholder='City' />
+          <input className='bordering' type='text' placeholder='City' />
         </Form.Field>
         <Form.Field>
-          <input type='text' placeholder='Venue' />
+          <input className='bordering' type='text' placeholder='Venue' />
         </Form.Field>
         <Form.Field>
-          <input type='text' placeholder='Date' />
+          <input className='bordering' type='text' placeholder='Date' />
         </Form.Field>
         <Button type='submit' color='teal' floated='right'>
           <span className='btn'>Submit</span>
