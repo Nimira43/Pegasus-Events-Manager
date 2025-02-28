@@ -1,16 +1,21 @@
+import { useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 
 type Props = {
   setFormOpen: (value: boolean) => void
 }
 
-export default function EventForm({setFormOpen}: Props) {
+export default function EventForm({ setFormOpen }: Props) {
+  const [title, setTitle] = useState('') 
+  
+  function onSubmit() {
+    console.log(title)
+  }
+  
   return (
     <Segment clearing>
-      <Header>
-        <span>Create Event</span>
-      </Header>
-      <Form>
+      <Header content='Create Event' />
+      <Form onSubmit={onSubmit}>
         <Form.Field>
           <input className='bordering' type='text' placeholder='Event Title' />
         </Form.Field>
