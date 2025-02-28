@@ -1,11 +1,13 @@
 import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
+import { AppEvent } from '../../../app/types/events'
 
 type Props = {
   setFormOpen: (value: boolean) => void
+  addEvent: (event: AppEvent) => void
 }
 
-export default function EventForm({ setFormOpen }: Props) {
+export default function EventForm({ setFormOpen, addEvent }: Props) {
   const initialValues = {
     title: '',
     category: '',
@@ -18,7 +20,7 @@ export default function EventForm({ setFormOpen }: Props) {
   const [values, setValues] = useState(initialValues) 
   
   function onSubmit() {
-    console.log(values)
+    addEvent({...values, id: 'a', hostedBy: 'Phil', attendees: [], hostPhotoURL: ''})
   }
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
