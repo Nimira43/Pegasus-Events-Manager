@@ -6,7 +6,15 @@ type Props = {
 }
 
 export default function EventForm({ setFormOpen }: Props) {
-  const [title, setTitle] = useState('') 
+  const initalValues = {
+    title: '',
+    category: '',
+    description: '',
+    city: '',
+    date: '',
+  }
+  
+  const [values, setValues] = useState('initialValue') 
   
   function onSubmit() {
     console.log('test')
