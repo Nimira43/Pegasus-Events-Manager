@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
 }
 
 export default function EventForm({ setFormOpen }: Props) {
-  const initalValues = {
+  const initialValues = {
     title: '',
     category: '',
     description: '',
@@ -14,10 +14,15 @@ export default function EventForm({ setFormOpen }: Props) {
     date: '',
   }
   
-  const [values, setValues] = useState('initialValue') 
+  const [values, setValues] = useState(initialValues) 
   
   function onSubmit() {
-    console.log('test')
+    console.log(values)
+  }
+
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target
+    setValues({...values, [name]: value})
   }
   
   return (
@@ -29,6 +34,9 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Event Title'
+            value={values.title}
+            name='title'
+            onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
         <Form.Field>
@@ -36,8 +44,6 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Category'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
@@ -45,8 +51,6 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Description'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
@@ -54,8 +58,6 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='City'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
           />
         </Form.Field>
         <Form.Field>
@@ -63,8 +65,7 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Venue'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
+            
           />
         </Form.Field>
         <Form.Field>
@@ -72,8 +73,6 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Date'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
           />
         </Form.Field>
         <Button type='submit' color='teal' floated='right'>
