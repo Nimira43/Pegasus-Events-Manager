@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { AppEvent } from '../../../app/types/events'
+import { createId } from '@paralleldrive/cuid2'
 
 type Props = {
   setFormOpen: (value: boolean) => void
@@ -20,7 +21,7 @@ export default function EventForm({ setFormOpen, addEvent }: Props) {
   const [values, setValues] = useState(initialValues) 
   
   function onSubmit() {
-    addEvent({...values, id: 'a', hostedBy: 'Phil', attendees: [], hostPhotoURL: ''})
+    addEvent({...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: ''})
   }
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
