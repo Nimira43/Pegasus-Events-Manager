@@ -11,6 +11,7 @@ export default function EventForm({ setFormOpen }: Props) {
     category: '',
     description: '',
     city: '',
+    venue: '',
     date: '',
   }
   
@@ -44,6 +45,9 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Category'
+            value={values.category}
+            name='category'
+            onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
         <Form.Field>
@@ -51,6 +55,9 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Description'
+            value={values.description}
+            name='description'
+            onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
         <Form.Field>
@@ -58,6 +65,9 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='City'
+            value={values.city}
+            name='city'
+            onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
         <Form.Field>
@@ -65,14 +75,19 @@ export default function EventForm({ setFormOpen }: Props) {
             className='bordering' 
             type='text' 
             placeholder='Venue'
-            
+            value={values.venue}
+            name='venue'
+            onChange ={e => handleInputChange(e)}      
           />
         </Form.Field>
         <Form.Field>
           <input 
             className='bordering' 
-            type='text' 
+            type='date' 
             placeholder='Date'
+            value={values.date}
+            name='date'
+            onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
         <Button type='submit' color='teal' floated='right'>
