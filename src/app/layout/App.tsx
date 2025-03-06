@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 function App() {
   const [formOpen, setFormOpen] = useState(false)
+  const [selectedEvent, setSelectedEvent] = useState<AppEvent | null>(null)
   
   return (
     <>
