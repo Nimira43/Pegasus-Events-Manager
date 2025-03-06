@@ -33,14 +33,13 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
   // }
 
   function onSubmit() {
-  if (selectedEvent) {
-    updateEvent({ ...selectedEvent, ...values });
-  } else {
-    addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' });
+    if (selectedEvent) {
+      updateEvent({ ...selectedEvent, ...values })
+    } else {
+      addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
+    }
+    setFormOpen(false)
   }
-  setFormOpen(false);
-}
-
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target
