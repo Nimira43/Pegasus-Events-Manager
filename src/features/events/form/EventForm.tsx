@@ -21,7 +21,8 @@ export default function EventForm({ setFormOpen, addEvent }: Props) {
   const [values, setValues] = useState(initialValues) 
   
   function onSubmit() {
-    addEvent({...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: ''})
+    addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
+    setFormOpen(false)
   }
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
