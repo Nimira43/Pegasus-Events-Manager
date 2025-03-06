@@ -3,10 +3,11 @@ import EventListAttendee from './EventListAttendee'
 import { AppEvent } from '../../../app/types/events'
 
 type Props = {
-  event: AppEvent
+  event: AppEvent,
+  selectEvent: (event: AppEvent) => void
 }
 
-export default function EventListItem({event}: Props) {
+export default function EventListItem({event, selectEvent }: Props) {
   return (
     <SegmentGroup>
       <Segment>
@@ -39,7 +40,10 @@ export default function EventListItem({event}: Props) {
       </Segment>
       <Segment clearing>
         <span>{event.description}</span>
-        <Button color='teal' floated='right'>
+        <Button
+          color='teal'
+          floated='right' 
+          onClick={() => selectEvent(event)}>
           <span className='btn'>View</span>
         </Button> 
       </Segment>
