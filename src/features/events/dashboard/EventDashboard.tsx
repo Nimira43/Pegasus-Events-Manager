@@ -12,6 +12,7 @@ type Props = {
 
 export default function EventDashboard({ formOpen, setFormOpen }: Props) {
   const [events, setEvents] = useState<AppEvent[]>([])
+  const [selectedEvent, setSelectedEvent] = useState(null)
 
   useEffect(() => {
     setEvents(sampleData)
