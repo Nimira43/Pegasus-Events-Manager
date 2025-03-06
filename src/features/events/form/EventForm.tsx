@@ -22,11 +22,25 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
   
   const [values, setValues] = useState(initialValues) 
   
+  // function onSubmit() {
+  //   selectedEvent
+    
+  //     ? updateEvent({ ...selectedEvent, ...values })
+      
+  //     : addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
+    
+  //   setFormOpen(false)
+  // }
+
   function onSubmit() {
-    selectedEvent ? updateEvent({...selectedEvent, ...values})
-    addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
-    setFormOpen(false)
+  if (selectedEvent) {
+    updateEvent({ ...selectedEvent, ...values });
+  } else {
+    addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' });
   }
+  setFormOpen(false);
+}
+
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target
@@ -35,7 +49,7 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
   
   return (
     <Segment clearing>
-      <Header content='Create Event' />
+      <Header content={selectedEvent ? 'Update Event' : 'Create Event'} />
       <Form onSubmit={onSubmit}>
         <Form.Field>
           <input 
