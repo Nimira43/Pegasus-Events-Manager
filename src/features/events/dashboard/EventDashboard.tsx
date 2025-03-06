@@ -41,6 +41,7 @@ export default function EventDashboard({ formOpen, setFormOpen }: Props) {
             setFormOpen={setFormOpen}
             addEvent={addEvent}
             selectedEvent={selectedEvent}
+            key={selectedEvent ? selectedEvent.id : 'create'}
           />}
       </Grid.Column>
     </Grid>      
