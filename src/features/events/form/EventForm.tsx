@@ -7,9 +7,10 @@ type Props = {
   setFormOpen: (value: boolean) => void
   addEvent: (event: AppEvent) => void
   selectedEvent: AppEvent | null
+  updateEvent: (event: AppEvent) => void
 }
 
-export default function EventForm({ setFormOpen, addEvent, selectedEvent }: Props) {
+export default function EventForm({ setFormOpen, addEvent, selectedEvent, updateEvent }: Props) {
   const initialValues = selectedEvent ??  {
     title: '',
     category: '',
@@ -22,6 +23,7 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent }: Prop
   const [values, setValues] = useState(initialValues) 
   
   function onSubmit() {
+    selectedEvent ? updateEvent({...selectedEvent, ...values})
     addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
     setFormOpen(false)
   }
