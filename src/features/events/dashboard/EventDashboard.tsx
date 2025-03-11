@@ -35,6 +35,10 @@ export default function EventDashboard({
     setFormOpen(false)
   }
 
+  function deleteEvent(eventId: string) {
+    setEvents(events.filter(evt => evt.id !== eventId))
+  }
+
   return (
     <Grid>
       <Grid.Column width={10}>
