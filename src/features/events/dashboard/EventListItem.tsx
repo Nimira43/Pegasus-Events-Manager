@@ -48,6 +48,12 @@ export default function EventListItem({
         <Button
           color='teal'
           floated='right' 
+          onClick={() => deleteEvent(event.id)}>
+          <span className='btn'>Delete</span>
+        </Button> 
+        <Button
+          color='teal'
+          floated='right' 
           onClick={() => selectEvent(event)}>
           <span className='btn'>View</span>
         </Button> 
