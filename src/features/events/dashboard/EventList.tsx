@@ -19,6 +19,7 @@ export default function EventList({
           key={event.id}
           event={event}
           selectEvent={selectEvent}
+          deleteEvent={deleteEvent}
         />
       ))}
     </>
