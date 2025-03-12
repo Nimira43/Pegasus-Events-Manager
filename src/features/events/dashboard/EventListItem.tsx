@@ -8,7 +8,11 @@ type Props = {
   deleteEvent: (eventId: string) => void
 }
 
-export default function EventListItem({event, selectEvent }: Props) {
+export default function EventListItem({
+  event,
+  selectEvent,
+  deleteEvent
+}: Props) {
   return (
     <SegmentGroup>
       <Segment>
