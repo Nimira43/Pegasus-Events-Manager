@@ -5,6 +5,7 @@ import { AppEvent } from '../../../app/types/events'
 type Props = {
   event: AppEvent,
   selectEvent: (event: AppEvent) => void
+  deleteEvent: (eventId: string) => void
 }
 
 export default function EventListItem({event, selectEvent }: Props) {
