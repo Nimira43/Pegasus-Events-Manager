@@ -29,8 +29,8 @@ function App() {
           setFormOpen={setFormOpen}
           selectedEvent={selectedEvent}
           selectEvent={handleSelectEvent}
-        />
-      </Container> */}
+        /> */}
+      </Container>
     </>
   )
 }
