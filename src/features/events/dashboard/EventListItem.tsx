@@ -52,7 +52,7 @@ export default function EventListItem({
           <span className='btn'>Delete</span>
         </Button> 
         <Button
-          color='teal'
+          color='black'
           floated='right' 
           onClick={() => selectEvent(event)}>
           <span className='btn'>View</span>
