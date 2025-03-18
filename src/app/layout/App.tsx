@@ -3,8 +3,6 @@ import NavBar from './nav/NavBar'
 import { Outlet } from 'react-router-dom'
 
 function App() {
- 
-
   return (
     <>
       <NavBar />
