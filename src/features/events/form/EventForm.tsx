@@ -1,14 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
-import { AppEvent } from '../../../app/types/events'
 import { createId } from '@paralleldrive/cuid2'
-
-type Props = {
-  setFormOpen: (value: boolean) => void
-  addEvent: (event: AppEvent) => void
-  selectedEvent: AppEvent | null
-  updateEvent: (event: AppEvent) => void
-}
 
 export default function EventForm({ setFormOpen, addEvent, selectedEvent, updateEvent }: Props) {
   const initialValues = selectedEvent ??  {
