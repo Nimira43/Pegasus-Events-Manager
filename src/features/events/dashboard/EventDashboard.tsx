@@ -15,11 +15,7 @@ export default function EventDashboard() {
   return (
     <Grid>
       <Grid.Column width={10}>
-        <EventList
-          events={events}
-          selectEvent={selectEvent}
-          deleteEvent={deleteEvent}
-        />
+        <EventList/>
       </Grid.Column>
       <Grid.Column width={6}>
         {formOpen && 
