@@ -12,12 +12,6 @@ export default function EventDashboard() {
     setEvents(sampleData)
   }, [])
 
-  
-
-  function deleteEvent(eventId: string) {
-    setEvents(events.filter(evt => evt.id !== eventId))
-  }
-
   return (
     <Grid>
       <Grid.Column width={10}>
