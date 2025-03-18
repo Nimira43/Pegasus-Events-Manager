@@ -6,7 +6,7 @@
   --dark: #111;
   --light: #fffaf0;
   --teal-light: #f1fcfc;
-  --teal: teal;
+  --teal: #008080;
   --teal-dark: 012222;
   --bg-text-light: #ddd;
   --primary-dark: #333;
@@ -14,8 +14,8 @@
 }
 
 body {
-  background-color: var(--teal-light);
-  color: var(--dark);
+  background-color: var(--teal-light) !important;
+  color: var(--dark) !important;
 }
 
 h1, h2, h3, h4, h5, h6, p,
@@ -23,31 +23,38 @@ a, i, li,
 header, footer,
 div, main, section, span, article, nav,
 input, form, label, textarea, button, select, option{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .ui.fixed.menu {
-  background-color: var(--dark);
+  background-color: var(--dark) !important;
 }
 
 .ui.main.container {
-  margin-top: 7em;
+  margin-top: 7em !important;
 }
 
 .logo {
-  color: var(--bg-text-light);
-  font-family: 'Great Vibes', serif;
-  font-weight: lighter;
-  font-size: 1.7rem;
-  padding-left: 6px;
-  letter-spacing: 2px;
+  color: var(--bg-text-light) !important;
+  font-family: 'Great Vibes', serif !important;
+  font-weight: lighter !important;
+  font-size: 1.7rem !important;
+  padding-left: 6px !important;
+  letter-spacing: 2px !important;
 }
 
 .heading {
-  font-weight: 400;
-  color: var(--bg-text-light);
-  letter-spacing: 0.5px;
+  font-weight: 300 !important;
+  color: var(--bg-text-light) !important;
+  background-color: var(--dark) !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  transition: color 0.5s ease-in !important;
+}
+
+.heading:hover {
+  color: var(--grey) !important;
 }
 
 .btn {
