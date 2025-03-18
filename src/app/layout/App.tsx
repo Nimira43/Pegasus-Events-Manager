@@ -1,8 +1,9 @@
 import { Container } from 'semantic-ui-react'
-import EventDashboard from '../../features/events/dashboard/EventDashboard'
+// import EventDashboard from '../../features/events/dashboard/EventDashboard'
 import NavBar from './nav/NavBar'
 import { useState } from 'react'
 import { AppEvent } from '../types/events'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [formOpen, setFormOpen] = useState(false)
@@ -22,13 +23,14 @@ function App() {
     <>
       <NavBar setFormOpen={handleCreatedFormOpen}/>
       <Container className='main'>
-        <EventDashboard 
+        <Outlet />
+        {/* <EventDashboard 
           formOpen={formOpen} 
           setFormOpen={setFormOpen}
           selectedEvent={selectedEvent}
           selectEvent={handleSelectEvent}
         />
-      </Container>
+      </Container> */}
     </>
   )
 }
