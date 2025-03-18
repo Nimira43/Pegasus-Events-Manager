@@ -13,7 +13,6 @@ export default function NavBar() {
           </MenuItem>
           <MenuItem >
             <Button 
-              onClick={() => setFormOpen(true)}
               floated='right' 
               basic 
               inverted 
