@@ -5,19 +5,8 @@ import { sampleData } from '../../../app/api/sampleData'
 import { useEffect, useState } from 'react'
 import { AppEvent } from '../../../app/types/events'
 
-type Props = {
-  formOpen: boolean
-  setFormOpen: (value: boolean) => void
-  selectEvent: (event: AppEvent | null) => void
-  selectedEvent: AppEvent | null
-}
 
-export default function EventDashboard({
-  formOpen,
-  setFormOpen,
-  selectEvent,
-  selectedEvent
-}: Props) {
+export default function EventDashboard() {
   const [events, setEvents] = useState<AppEvent[]>([])
   useEffect(() => {
     setEvents(sampleData)
