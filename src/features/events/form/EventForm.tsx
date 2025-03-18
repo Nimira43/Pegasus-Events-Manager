@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
-import { createId } from '@paralleldrive/cuid2'
 
 export default function EventForm() {
   const initialValues = {
