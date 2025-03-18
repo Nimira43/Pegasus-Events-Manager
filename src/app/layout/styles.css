@@ -14,8 +14,8 @@
 }
 
 body {
-  background-color: var(--teal-light) !important;
-  color: var(--dark) !important;
+  background-color: var(--teal-light);
+  color: var(--dark);
 }
 
 h1, h2, h3, h4, h5, h6, p,
@@ -24,11 +24,11 @@ header, footer,
 div, main, section, span, article, nav,
 input, form, label, textarea, button, select, option{
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 300 !important;
+  font-weight: 300;
 }
 
 .ui.fixed.menu {
-  background-color: var(--dark) !important;
+  background-color: var(--dark);
 }
 
 .ui.main.container {
@@ -45,16 +45,10 @@ input, form, label, textarea, button, select, option{
 }
 
 .heading {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   color: var(--bg-text-light) !important;
-  background-color: var(--dark) !important;
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
-  transition: color 0.5s ease-in !important;
-}
-
-.heading:hover {
-  color: var(--grey) !important;
 }
 
 .btn {
