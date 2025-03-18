@@ -18,14 +18,7 @@ export default function EventDashboard() {
         <EventList/>
       </Grid.Column>
       <Grid.Column width={6}>
-        {formOpen && 
-          <EventForm
-            setFormOpen={setFormOpen}
-            updateEvent={updateEvent}
-            addEvent={addEvent}
-            selectedEvent={selectedEvent}
-            key={selectedEvent ? selectedEvent.id : 'create'}
-          />}
+        <h2>Filters</h2>
       </Grid.Column>
     </Grid>      
   )
