@@ -2,8 +2,8 @@ import { ChangeEvent, useState } from 'react'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { createId } from '@paralleldrive/cuid2'
 
-export default function EventForm({ setFormOpen, addEvent, selectedEvent, updateEvent }: Props) {
-  const initialValues = selectedEvent ??  {
+export default function EventForm() {
+  const initialValues = {
     title: '',
     category: '',
     description: '',
@@ -13,24 +13,15 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
   }
   
   const [values, setValues] = useState(initialValues) 
-  
-  // function onSubmit() {
-  //   selectedEvent
-    
-  //     ? updateEvent({ ...selectedEvent, ...values })
-      
-  //     : addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
-    
-  //   setFormOpen(false)
-  // }
 
   function onSubmit() {
-    if (selectedEvent) {
-      updateEvent({ ...selectedEvent, ...values })
-    } else {
-      addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
-    }
-    setFormOpen(false)
+    console.log(values)
+    // if (selectedEvent) {
+    //   updateEvent({ ...selectedEvent, ...values })
+    // } else {
+    //   addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
+    // }
+    // setFormOpen(false)
   }
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -40,7 +31,7 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
   
   return (
     <Segment clearing>
-      <Header content={selectedEvent ? 'Update Event' : 'Create Event'} />
+      <Header content={'Create Event'} />
       <Form onSubmit={onSubmit}>
         <Form.Field>
           <input 
@@ -106,9 +97,6 @@ export default function EventForm({ setFormOpen, addEvent, selectedEvent, update
           <span className='btn'>Submit</span>
         </Button>
         <Button 
-          onClick={() => 
-            setFormOpen(false)
-          }
           type='submit' 
           color='black' 
           floated='right'
