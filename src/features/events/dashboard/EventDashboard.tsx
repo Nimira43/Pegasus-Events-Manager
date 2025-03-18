@@ -12,17 +12,7 @@ export default function EventDashboard() {
     setEvents(sampleData)
   }, [])
 
-  function addEvent(event: AppEvent) {
-    setEvents(prevState => {
-      return [...prevState, event]
-    })
-  }
-
-  function updateEvent(updatedEvent: AppEvent) {
-    setEvents(events.map(evt => evt.id === updatedEvent.id ? updatedEvent : evt))
-    selectEvent(null)
-    setFormOpen(false)
-  }
+  
 
   function deleteEvent(eventId: string) {
     setEvents(events.filter(evt => evt.id !== eventId))
