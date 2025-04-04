@@ -44,6 +44,10 @@ input, form, label, textarea, button, select, option{
   letter-spacing: 2px !important;
 }
 
+.lg {
+  font-size: 3.4rem !important;
+}
+
 .heading {
   font-weight: 400 !important;
   color: var(--bg-text-light) !important;
@@ -54,6 +58,12 @@ input, form, label, textarea, button, select, option{
 .btn {
   color: var(--bg-text-light);
   font-weight: 400;
+  text-transform: uppercase;
+}
+
+.home-page-btn {
+  color: var(--bg-dark);
+  font-weight: 500;
   text-transform: uppercase;
 }
 

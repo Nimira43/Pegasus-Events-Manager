@@ -1,4 +1,5 @@
-import { Container, Header, Image, Segment } from 'semantic-ui-react'
+import { Button, Container, Header, Image, Segment } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 export default function HomePage() {
   return (
@@ -18,9 +19,17 @@ export default function HomePage() {
               marginBottom: 12
             }}
           />
-          <span className='logo'>Pegasus</span>
-          
+          <span className='logo lg'>Pegasus</span>  
         </Header>
+        <Button
+          size='huge'
+          as={Link}
+          to='/events'
+        >
+          <span className='home-page-btn'>
+            Get Started
+          </span>   
+        </Button>
       </Container>
     </Segment>
 
