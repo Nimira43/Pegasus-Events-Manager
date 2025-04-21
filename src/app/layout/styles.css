@@ -74,3 +74,19 @@ input, form, label, textarea, button, select, option{
 input::placeholder {
   color: var(--grey) !important;
 }
+
+.masthead {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0 , 0.9)),
+    url('/bg.jpg') no-repeat center !important;
+  background-size: cover !important; 
+  height: 100vh;
+}
+
+.masthead h1.ul.header {
+  font-size: 4em;
+
+}
