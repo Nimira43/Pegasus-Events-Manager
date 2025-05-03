@@ -27,6 +27,11 @@ input, form, label, textarea, button, select, option{
   font-weight: 300;
 }
 
+.icon  {
+  color: var(--teal);
+  padding: 2px;
+}
+
 .ui.fixed.menu {
   background-color: var(--dark);
 }

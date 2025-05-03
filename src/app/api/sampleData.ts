@@ -36,7 +36,7 @@ export const sampleData = [
     city: 'Birmingham, UK',
     venue: 'Fox and Goose, 23 Main Street, Birmingham, UK',
     hostedBy: 'Mick',
-    hostPhotoURL: 'https://randomuser.me/api/portraits/men/59.jpg',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/51.jpg',
     attendees: [
       {
         id: 'a',

@@ -1,6 +1,8 @@
 import { Button, Icon, Item, ItemGroup, List, Segment, SegmentGroup } from 'semantic-ui-react'
 import EventListAttendee from './EventListAttendee'
 import { AppEvent } from '../../../app/types/events'
+import { LuClock3 } from 'react-icons/lu'
+import { MdOutlineLocationOn } from 'react-icons/md'
 
 type Props = {
   event: AppEvent,
@@ -26,8 +28,10 @@ export default function EventListItem({ event }: Props) {
       </Segment>
       <Segment>
         <span>
-          <Icon name='clock' /> {event.date}
-          <Icon name='marker' /> {event.venue}
+          {/* <Icon name='calendar' /> {event.date} */}
+          <LuClock3 className='icon' /> {event.date}
+          {/* <Icon name='marker' /> {event.venue} */}
+          <MdOutlineLocationOn className='icon' /> {event.venue}
         </span>
       </Segment>
       <Segment secondary>
