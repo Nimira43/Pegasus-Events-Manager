@@ -6,9 +6,11 @@ export default function SignedInMenu() {
     <Menu.Item position='right'>
       <Image avatar spaced='right' src='/user.png' />
       <Dropdown pointing='top left' text='Lenny'>
-        <Dropdown.Item as={Link} to='/createEvent' text='Create Event' icon='plus' />
-        <Dropdown.Item to='/createEvent' text='Create Event' icon='plus' />
-        <Dropdown.Item as={Link} to='/createEvent' text='Create Event' icon='plus' />
+        <Dropdown.Menu>
+          <Dropdown.Item as={Link} to='/createEvent' text='Create Event' icon='plus' />
+          <Dropdown.Item text='My Profile' icon='user' />
+          <Dropdown.Item text='Sign Out' icon='power' />
+        </Dropdown.Menu>
       </Dropdown>
     </Menu.Item>
   )
