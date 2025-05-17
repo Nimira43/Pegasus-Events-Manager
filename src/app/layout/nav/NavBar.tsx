@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { Button, Container, Menu, MenuItem } from 'semantic-ui-react'
-import SignedOutButtons from './SignedOutButtons'
-// import SignedInMenu from './SignedInMenu'
+// import SignedOutButtons from './SignedOutButtons'
+import SignedInMenu from './SignedInMenu'
 
 export default function NavBar() {
   return (
@@ -33,8 +33,8 @@ export default function NavBar() {
               <span className='btn'>Create Event</span>
             </Button>
           </MenuItem>
-        <SignedOutButtons />
-        {/* <SignedInMenu /> */}
+        {/* <SignedOutButtons /> */}
+        <SignedInMenu />
         </Container>  
       </Menu>
   )
