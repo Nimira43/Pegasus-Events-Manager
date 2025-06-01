@@ -1,4 +1,4 @@
-import { Segment } from 'semantic-ui-react'
+import { Image, Segment } from 'semantic-ui-react'
 
 export default function EventDetailedHeader() {
   return (
@@ -7,7 +7,9 @@ export default function EventDetailedHeader() {
         basic 
         attached='top'
         style={{padding: '0'}}
-      ></Segment>  
+      >
+       <Image src={`/assets/drinks.jpg`} fluid />
+      </Segment>  
     </Segment.Group>
   )
 }
