@@ -3,6 +3,7 @@ import EventListAttendee from './EventListAttendee'
 import { AppEvent } from '../../../app/types/events'
 import { LuClock3 } from 'react-icons/lu'
 import { MdOutlineLocationOn } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 type Props = {
   event: AppEvent,
@@ -28,9 +29,7 @@ export default function EventListItem({ event }: Props) {
       </Segment>
       <Segment>
         <span>
-          {/* <Icon name='calendar' /> {event.date} */}
           <LuClock3 className='icon' /> {event.date}
-          {/* <Icon name='marker' /> {event.venue} */}
           <MdOutlineLocationOn className='icon' /> {event.venue}
         </span>
       </Segment>
@@ -50,6 +49,8 @@ export default function EventListItem({ event }: Props) {
           <span className='btn'>Delete</span>
         </Button> 
         <Button
+          as={Link}
+          to={`/events/${event.id}`}
           color='black'
           floated='right' 
         >
