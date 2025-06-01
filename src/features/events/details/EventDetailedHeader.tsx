@@ -1,4 +1,4 @@
-import { Header, Image, Item, Segment } from 'semantic-ui-react'
+import { Button, Header, Image, Item, Segment } from 'semantic-ui-react'
 
 export default function EventDetailedHeader() {
   return (
@@ -24,7 +24,17 @@ export default function EventDetailedHeader() {
             </Item>
           </Item.Group>
         </Segment>
-      </Segment>  
+      </Segment> 
+      <Segment attached='bottom'>
+        <Button>Cancel Attending</Button>
+        <Button>Join Event</Button>
+        <Button 
+          color='teal'
+          floated='right'
+        >
+          Manage Event
+        </Button>
+      </Segment> 
     </Segment.Group>
   )
 }
