@@ -12,7 +12,7 @@ export default function EventDetailedPage() {
         <EventDetailedInfo />
         <EventDetailedChat />
       </Grid.Column>
-      <Grid.Column>
+      <Grid.Column width={6}>
         <EventDetailedSidebar />
       </Grid.Column>
     </Grid>
