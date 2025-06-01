@@ -1,3 +1,4 @@
+import EventDetailedChat from './EventDetailedChat'
 import EventDetailedHeader from './EventDetailedHeader'
 import EventDetailedInfo from './EventDetailedInfo'
 
@@ -7,6 +8,7 @@ export default function EventDetailedPage() {
       <h1>EventDetailedPage</h1>
       <EventDetailedHeader />
       <EventDetailedInfo />
+      <EventDetailedChat />
     </>
   )
 }
