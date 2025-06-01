@@ -1,6 +1,7 @@
 import EventDetailedChat from './EventDetailedChat'
 import EventDetailedHeader from './EventDetailedHeader'
 import EventDetailedInfo from './EventDetailedInfo'
+import EventDetailedSidebar from './EventDetailedSidebar'
 
 export default function EventDetailedPage() {
   return (
@@ -9,6 +10,7 @@ export default function EventDetailedPage() {
       <EventDetailedHeader />
       <EventDetailedInfo />
       <EventDetailedChat />
+      <EventDetailedSidebar />
     </>
   )
 }
