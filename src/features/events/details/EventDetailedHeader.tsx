@@ -45,13 +45,21 @@ export default function EventDetailedHeader() {
         </Segment>
       </Segment> 
       <Segment attached='bottom'>
-        <Button>Cancel Attending</Button>
-        <Button>Join Event</Button>
+        <Button
+          color='black'
+        >
+          <span className='btn-general'>Cancel</span>
+        </Button>
+        <Button
+          color='black'
+        >
+          <span className='btn-general'>Join</span>
+        </Button>
         <Button 
           color='teal'
           floated='right'
         >
-          Manage Event
+          <span className='btn-general'>Manage</span>
         </Button>
       </Segment> 
     </Segment.Group>

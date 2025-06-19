@@ -34,7 +34,11 @@ export default function EventDetailedInfo() {
             <span>Event Venue</span>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Button color='teal' size='tiny' content='Show Map'/>
+            <Button 
+              color='teal' 
+            >
+            <span className='btn-general'>Show Map</span>
+            </Button>
           </Grid.Column>
         </Grid>
       </Segment>
