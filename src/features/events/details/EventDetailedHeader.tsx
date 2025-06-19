@@ -20,8 +20,15 @@ export default function EventDetailedHeader() {
         attached='top'
         style={{padding: '0'}}
       >
-        <Image src={`/assets/drinks.jpg`} fluid />
-        <Segment basic>
+        <Image 
+          src={`/assets/drinks.jpg`} 
+          fluid 
+          style={eventImageStyle}
+        />
+        <Segment 
+          basic
+          style={eventImageTextStyle}
+        >
           <Item.Group>
             <Item>
               <Item.Content>
