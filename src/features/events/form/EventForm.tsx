@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 
 export default function EventForm() {
@@ -92,10 +93,16 @@ export default function EventForm() {
             onChange ={e => handleInputChange(e)}
           />
         </Form.Field>
-        <Button type='submit' color='teal' floated='right'>
+        <Button 
+          type='submit' 
+          color='teal' 
+          floated='right'
+        >
           <span className='btn'>Submit</span>
         </Button>
         <Button 
+          as={Link}
+          to='/event'
           type='submit' 
           color='black' 
           floated='right'

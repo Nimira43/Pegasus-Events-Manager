@@ -1,6 +1,18 @@
 import { Button, Header, Image, Item, Segment } from 'semantic-ui-react'
 
 export default function EventDetailedHeader() {
+  const eventImageStyle = {
+    filter: 'brightness(30%)'
+  }
+  const eventImageTextStyle = {
+    position: 'absolute',
+    bottom: '5%',
+    left: '5%',
+    width: '100%',
+    height: 'auto',
+    color: 'white'
+  }
+
   return (
     <Segment.Group>
       <Segment 
