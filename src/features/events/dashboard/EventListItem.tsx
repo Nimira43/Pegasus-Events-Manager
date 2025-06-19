@@ -1,4 +1,4 @@
-import { Button, Icon, Item, ItemGroup, List, Segment, SegmentGroup } from 'semantic-ui-react'
+import { Button, Item, ItemGroup, List, Segment, SegmentGroup } from 'semantic-ui-react'
 import EventListAttendee from './EventListAttendee'
 import { AppEvent } from '../../../app/types/events'
 import { LuClock3 } from 'react-icons/lu'
