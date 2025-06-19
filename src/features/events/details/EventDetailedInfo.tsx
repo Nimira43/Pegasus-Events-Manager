@@ -1,6 +1,6 @@
-import { Segment, Grid, Button } from 'semantic-ui-react';
-import { MdOutlineDescription, MdOutlineLocationOn } from "react-icons/md"
-import { BsCalendar3 } from "react-icons/bs"
+import { Segment, Grid, Button } from 'semantic-ui-react'
+import { MdOutlineDescription, MdOutlineLocationOn } from 'react-icons/md'
+import { BsCalendar3 } from 'react-icons/bs'
 
 export default function EventDetailedInfo() {
   return (
