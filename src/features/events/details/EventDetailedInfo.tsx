@@ -1,4 +1,4 @@
-import { Segment, Grid, Icon, Button } from 'semantic-ui-react';
+import { Segment, Grid, Button } from 'semantic-ui-react';
 import { MdOutlineDescription, MdOutlineLocationOn } from "react-icons/md"
 import { BsCalendar3 } from "react-icons/bs"
 
