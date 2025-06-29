@@ -1,4 +1,4 @@
-import { useAppSelector } from "../store/store"
+import { useAppSelector } from '../store/store'
 
 export default function Scratch() {
   const {data} = useAppSelector(state => state.test)
