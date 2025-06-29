@@ -19,11 +19,20 @@ export default function NavBar() {
           <span className='logo'>Pegasus</span>
         </MenuItem>
         <MenuItem
+          name='Events'
           as={NavLink}
           to='/events'
           className='heading'
         >
           <span className='heading'>Events</span>
+        </MenuItem>
+        <MenuItem
+          name='Scratch'
+          as={NavLink}
+          to='/scratch'
+          className='heading'
+        >
+          <span className='heading'>Testing</span>
         </MenuItem>
         <MenuItem>
           <Button 
