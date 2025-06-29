@@ -22,7 +22,6 @@ export default function NavBar() {
           name='Events'
           as={NavLink}
           to='/events'
-          className='heading'
         >
           <span className='heading'>Events</span>
         </MenuItem>
@@ -30,7 +29,6 @@ export default function NavBar() {
           name='Scratch'
           as={NavLink}
           to='/scratch'
-          className='heading'
         >
           <span className='heading'>Testing</span>
         </MenuItem>
