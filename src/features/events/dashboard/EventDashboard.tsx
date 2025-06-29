@@ -4,7 +4,6 @@ import { sampleData } from '../../../app/api/sampleData'
 import { useEffect, useState } from 'react'
 import { AppEvent } from '../../../app/types/events'
 
-
 export default function EventDashboard() {
   const [events, setEvents] = useState<AppEvent[]>([])
   useEffect(() => {
