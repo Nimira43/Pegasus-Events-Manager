@@ -8,9 +8,18 @@ const initialState: State = {
   data: 81
 }
 
-
 export const testSlice = createSlice({
   name: 'test',
   initialState,
-  reducers: {}
+  reducers: {
+    increment: (state) => {
+      state.data += 1
+    },
+    decrement: (state) => {
+      state.data -= 1
+    },
+    incrementByAmount: (state, action) => {
+      state.data += action.payload
+    }
+  }
 })
