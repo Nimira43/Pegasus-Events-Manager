@@ -1,9 +1,9 @@
 import { Button } from 'semantic-ui-react'
-import { useAppSelector } from '../store/store'
+import { useAppDispatch, useAppSelector } from '../store/store'
 
 export default function Scratch() {
   const {data} = useAppSelector(state => state.test)
-  
+  const dispatch = useAppDispatch()
 
   return (
     <div>
