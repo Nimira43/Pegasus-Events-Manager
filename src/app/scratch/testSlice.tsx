@@ -23,3 +23,9 @@ export const testSlice = createSlice({
     }
   }
 })
+
+export const {
+  increment,
+  decrement,
+  incrementByAmount
+} = testSlice.actions
