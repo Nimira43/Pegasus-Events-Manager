@@ -7,7 +7,7 @@ export default function EventForm() {
   const {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
 
-  const initialValues = {
+  const initialValues = event ?? {
     title: '',
     category: '',
     description: '',
