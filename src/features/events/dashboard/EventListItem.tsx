@@ -4,12 +4,15 @@ import { AppEvent } from '../../../app/types/events'
 import { LuClock3 } from 'react-icons/lu'
 import { MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import { useAppDispatch } from '../../../app/store/store'
 
 type Props = {
   event: AppEvent,
 }
 
 export default function EventListItem({ event }: Props) {
+  const dispatch = useAppDispatch()
+
   return (
     <SegmentGroup>
       <Segment>
