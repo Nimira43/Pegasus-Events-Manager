@@ -5,7 +5,7 @@ type Props = {
   event: AppEvent
 }
 
-export default function EventDetailedHeader() {
+export default function EventDetailedHeader({event}: Props) {
   const eventImageStyle = {
     filter: 'brightness(30%)'
   }
