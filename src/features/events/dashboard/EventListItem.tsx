@@ -5,6 +5,7 @@ import { LuClock3 } from 'react-icons/lu'
 import { MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../../../app/store/store'
+import { deleteEvent } from '../eventSlice'
 
 type Props = {
   event: AppEvent,
@@ -46,6 +47,7 @@ export default function EventListItem({ event }: Props) {
       <Segment clearing>
         <span>{event.description}</span>
         <Button
+          onClick={() => dispatch(deleteEvent(event.id))}
           color='teal'
           floated='right' 
         >
