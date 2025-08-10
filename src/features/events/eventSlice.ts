@@ -25,3 +25,9 @@ export const eventSlice = createSlice({
     }
   }
 })
+
+export const {
+  createEvent,
+  updateEvent,
+  deleteEvent
+} = eventSlice.actions
