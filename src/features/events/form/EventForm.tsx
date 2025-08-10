@@ -1,11 +1,15 @@
 import { ChangeEvent, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
-import { useAppSelector } from '../../../app/store/store'
+import { useAppDispatch, useAppSelector } from '../../../app/store/store'
+import { createEvent, updateEvent } from '../eventSlice'
+import { createId } from '@paralleldrive/cuid2'
 
 export default function EventForm() {
-  const {id} = useParams()
+  let {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
 
   const initialValues = event ?? {
     title: '',
@@ -19,16 +23,18 @@ export default function EventForm() {
   const [values, setValues] = useState(initialValues) 
 
   function onSubmit() {
-    console.log(values)
-    // if (selectedEvent) {
-    //   updateEvent({ ...selectedEvent, ...values })
-    // } else {
-    //   addEvent({ ...values, id: createId(), hostedBy: 'Phil', attendees: [], hostPhotoURL: '' })
-    // }
-    // setFormOpen(false)
+    id = id ?? createId()
+    
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    event 
+      ? dispatch(updateEvent({ ...event, ...values })) 
+      : dispatch(createEvent({ ...values, id, hostedBy: 'Vanessa', attendees: [], hostPhotoURL: '' }))
+    navigate(`/events/${id}`)
   }
 
-  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleInputChange(
+    e: ChangeEvent<HTMLInputElement>
+  ) {
     const { name, value } = e.target
     setValues({...values, [name]: value})
   }
