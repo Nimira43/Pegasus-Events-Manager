@@ -13,7 +13,7 @@ export const sampleData = [
       {
         id: 'a',
         name: 'Megan',
-        photoURL: 'https://randomuser.me/api/portraits/women/11.jpg'
+        photoURL: 'https://randomuser.me/api/portraits/women/55.jpg'
       },
       {
         id: 'b',
@@ -47,6 +47,53 @@ export const sampleData = [
         id: 'b',
         name: 'Debbie',
         photoURL: 'https://randomuser.me/api/portraits/women/14.jpg'
+      }
+    ]
+  },
+
+  {
+    id: '3',
+    title: 'Bob\'s Retirement Do',
+    date: '2025-07-21',
+    category: 'party',
+    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In optio fugiat nesciunt illo natus dolore et numquam distinctio eveniet, impedit quam aliquam. Ea, cumque laudantium.',
+    city: 'Reading, UK',
+    venue: 'Richmond Social Club, 7 High Street, Reading, UK',
+    hostedBy: 'Albert',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/75.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Jack',
+        photoURL: 'https://randomuser.me/api/portraits/men/35.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Elsie',
+        photoURL: 'https://randomuser.me/api/portraits/women/64.jpg'
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'Celina\'s Hen Do',
+    date: '2025-08-21',
+    category: 'Hen night',
+    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In optio fugiat nesciunt illo natus dolore et numquam distinctio eveniet, impedit quam aliquam. Ea, cumque laudantium.',
+    city: 'Maidstone, UK',
+    venue: 'The Tumbling Sailor, 53 New Street, Maidstone, UK',
+    hostedBy: 'Sue',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/women/21.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Tina',
+        photoURL: 'https://randomuser.me/api/portraits/women/60.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Rachel',
+        photoURL: 'https://randomuser.me/api/portraits/women/11.jpg'
       }
     ]
   }
