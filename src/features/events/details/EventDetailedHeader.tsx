@@ -1,4 +1,9 @@
 import { Button, Header, Image, Item, Segment } from 'semantic-ui-react'
+import { AppEvent } from '../../../app/types/events'
+
+type Props = {
+  event: AppEvent
+}
 
 export default function EventDetailedHeader() {
   const eventImageStyle = {

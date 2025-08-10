@@ -15,8 +15,8 @@ export default function EventDetailedPage() {
   return (
     <Grid>
       <Grid.Column width={10}>
-        <EventDetailedHeader />
-        <EventDetailedInfo />
+        <EventDetailedHeader  event={event}/>
+        <EventDetailedInfo event=/>
         <EventDetailedChat />
       </Grid.Column>
       <Grid.Column width={6}>
