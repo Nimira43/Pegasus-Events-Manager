@@ -20,5 +20,8 @@ export const eventSlice = createSlice({
     updateEvent: (state, action) => {
       state.events[state.events.findIndex(evt => evt.id === action.payload.id)] = action.payload
     },
+    deleteEvent: (state, action) => {
+      state.events.splice(state.events.findIndex(evt => evt.id === action.payload), 1)
+    }
   }
 })
