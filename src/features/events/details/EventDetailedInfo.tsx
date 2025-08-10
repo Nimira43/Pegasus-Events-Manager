@@ -16,7 +16,7 @@ export default function EventDetailedInfo({event}: Props) {
             <MdOutlineDescription className='icon'/>
           </Grid.Column>
           <Grid.Column width={15}>
-            <p>Event Description</p>
+            <p>{event.description}</p>
           </Grid.Column>
         </Grid>
       </Segment>
