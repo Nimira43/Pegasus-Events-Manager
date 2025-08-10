@@ -10,6 +10,8 @@ export default function EventDetailedPage() {
   const {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
 
+  if (!event) return <h2>Event Not Found</h2>
+
   return (
     <Grid>
       <Grid.Column width={10}>
