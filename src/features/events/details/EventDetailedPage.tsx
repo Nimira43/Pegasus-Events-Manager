@@ -4,10 +4,11 @@ import EventDetailedHeader from './EventDetailedHeader'
 import EventDetailedInfo from './EventDetailedInfo'
 import EventDetailedSidebar from './EventDetailedSidebar'
 import { useParams } from 'react-router-dom'
+import { useAppSelector } from '../../../app/store/store'
 
 export default function EventDetailedPage() {
   const {id} = useParams()
-  
+  const event = useAppSelector
 
   return (
     <Grid>
