@@ -1,5 +1,6 @@
 import { Button, Header, Image, Item, Segment } from 'semantic-ui-react'
 import { AppEvent } from '../../../app/types/events'
+import { Link } from 'react-router-dom'
 
 type Props = {
   event: AppEvent
@@ -39,11 +40,11 @@ export default function EventDetailedHeader({event}: Props) {
               <Item.Content>
                 <Header
                   size='huge'
-                  content='Event Title'
+                  content={event.title}
                   style={{color: 'white'}}
                 />
-                <p>Event Date</p>
-                <p>Hosted by <strong>Lenny</strong></p>
+                <p>{event.date}</p>
+                <p>Hosted by <strong>{event.hostedBy}</strong></p>
               </Item.Content>
             </Item>
           </Item.Group>
@@ -61,6 +62,8 @@ export default function EventDetailedHeader({event}: Props) {
           <span className='btn-general'>Join</span>
         </Button>
         <Button 
+          as={Link}
+          to={`/manage/${event.id}`}
           color='teal'
           floated='right'
         >
