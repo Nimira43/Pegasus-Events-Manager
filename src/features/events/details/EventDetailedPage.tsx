@@ -8,7 +8,7 @@ import { useAppSelector } from '../../../app/store/store'
 
 export default function EventDetailedPage() {
   const {id} = useParams()
-  const event = useAppSelector
+  const event = useAppSelector(state => state.events.events.find(e => e.id === id))
 
   return (
     <Grid>
