@@ -1,8 +1,13 @@
 import { Segment, Grid, Button } from 'semantic-ui-react'
 import { MdOutlineDescription, MdOutlineLocationOn } from 'react-icons/md'
 import { BsCalendar3 } from 'react-icons/bs'
+import { AppEvent } from '../../../app/types/events'
 
-export default function EventDetailedInfo() {
+type Props = {
+  event: AppEvent
+}
+
+export default function EventDetailedInfo({event}: Props) {
   return (
     <Segment.Group>
       <Segment attached='top'>
