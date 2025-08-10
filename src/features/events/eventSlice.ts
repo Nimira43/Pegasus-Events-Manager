@@ -13,5 +13,9 @@ const initialState: State = {
 export const eventSlice = createSlice({
   name: 'events',
   initialState,
-  reducers: {}
+  reducers: {
+    createEvent: (state, action) => {
+      state.events.push(action.payload)
+    }
+  }
 })
