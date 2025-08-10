@@ -1,8 +1,12 @@
 import { ChangeEvent, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
+import { useAppSelector } from '../../../app/store/store'
 
 export default function EventForm() {
+  const {id} = useParams()
+  const event = useAppSelector(state => state.events.events.find(e => e.id === id))
+
   const initialValues = {
     title: '',
     category: '',
