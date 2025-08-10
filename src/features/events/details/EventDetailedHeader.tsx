@@ -26,7 +26,7 @@ export default function EventDetailedHeader({event}: Props) {
         style={{padding: '0'}}
       >
         <Image 
-          src={`/assets/drinks.jpg`} 
+          src={`/assets/${event.category}.jpg`} 
           fluid 
           style={eventImageStyle}
         />

@@ -3,7 +3,7 @@ export const sampleData = [
     id: '1',
     title: 'Birthday party for Megan',
     date: '2025-01-19',
-    category: 'dinner',
+    category: 'food',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, illum explicabo enim suscipit ab nisi molestiae porro recusandae libero voluptatum facere deserunt omnis!',
     city: 'Manchester, UK',
     venue: 'Vanessa Dobson, 29 Romford Road, Manchester, UK',
@@ -53,12 +53,12 @@ export const sampleData = [
 
   {
     id: '3',
-    title: 'Bob\'s Retirement Do',
+    title: 'New Star Wars movie',
     date: '2025-07-21',
-    category: 'party',
+    category: 'film',
     description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In optio fugiat nesciunt illo natus dolore et numquam distinctio eveniet, impedit quam aliquam. Ea, cumque laudantium.',
     city: 'Reading, UK',
-    venue: 'Richmond Social Club, 7 High Street, Reading, UK',
+    venue: 'ABC Cinema, 7 High Street, Reading, UK',
     hostedBy: 'Albert',
     hostPhotoURL: 'https://randomuser.me/api/portraits/men/75.jpg',
     attendees: [
@@ -76,12 +76,12 @@ export const sampleData = [
   },
   {
     id: '4',
-    title: 'Celina\'s Hen Do',
+    title: 'Art Museum Visit',
     date: '2025-08-21',
-    category: 'Hen night',
+    category: 'culture',
     description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In optio fugiat nesciunt illo natus dolore et numquam distinctio eveniet, impedit quam aliquam. Ea, cumque laudantium.',
-    city: 'Maidstone, UK',
-    venue: 'The Tumbling Sailor, 53 New Street, Maidstone, UK',
+    city: 'Bristol, UK',
+    venue: ', 53 New Street, Maidstone, UK',
     hostedBy: 'Sue',
     hostPhotoURL: 'https://randomuser.me/api/portraits/women/21.jpg',
     attendees: [
