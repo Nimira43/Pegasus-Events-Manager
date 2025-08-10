@@ -36,7 +36,7 @@ export default function EventDetailedInfo({event}: Props) {
             <MdOutlineLocationOn className='icon' />
           </Grid.Column>
           <Grid.Column width={11}>
-            <span>Event Venue</span>
+            <span>{event.venue}</span>
           </Grid.Column>
           <Grid.Column width={4}>
             <Button 
