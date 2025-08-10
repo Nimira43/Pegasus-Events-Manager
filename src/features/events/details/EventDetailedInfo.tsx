@@ -26,7 +26,7 @@ export default function EventDetailedInfo({event}: Props) {
             <BsCalendar3 className='icon' />
           </Grid.Column>
           <Grid.Column width={15}>
-            <span>Event Date</span>
+            <span>{event.date}</span>
           </Grid.Column>
         </Grid>
       </Segment>
