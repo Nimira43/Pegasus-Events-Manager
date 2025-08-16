@@ -22,7 +22,7 @@ export default function EventForm() {
   //   date: '',
   // }
   
-  const [values, setValues] = useState(initialValues) 
+  // const [values, setValues] = useState(initialValues) 
 
   function onSubmit(data: FieldValues) {
     console.log(data)
