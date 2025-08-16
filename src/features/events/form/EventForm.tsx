@@ -52,37 +52,31 @@ export default function EventForm() {
       />
       <Form onSubmit={onSubmit}>
         <Form.Input 
-          className='bordering' 
           placeholder='Event Title'
           defaultValue={event?.title || ''}
           {...register('title')}
         />
         <Form.Input 
-          className='bordering' 
           placeholder='Category'
           defaultValue={event?.category || ''}
           {...register('category')}
         />
-        <Form.Input 
-          className='bordering'  
+        <Form.Input  
           placeholder='Description'
           defaultValue={event?.description || ''}
           {...register('description')}
         />
         <Form.Input 
-          className='bordering' 
           placeholder='City'
           defaultValue={event?.city || ''}
           {...register('city')}
         />
         <Form.Input 
-          className='bordering' 
           placeholder='Venue'
           defaultValue={event?.venue}
           {...register('venue')}
         />
-        <Form.Input 
-          className='bordering'  
+        <Form.Input  
           placeholder='Date'
           defaultValue={event?.date}
           {...register('date')}
