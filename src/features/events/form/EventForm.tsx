@@ -43,33 +43,33 @@ export default function EventForm() {
         <Form.Input 
           placeholder='Category'
           defaultValue={event?.category || ''}
-          {...register('category', {required: true})}
-          error={errors.category && 'Category is required'}
+          {...register('category', {required: 'Category is required'})}
+          error={errors.category && errors.category.message}
         />
         <Form.Input  
           placeholder='Description'
           defaultValue={event?.description || ''}
-          {...register('description', {required: true})}
-          error={errors.description && 'Description is required'}
+          {...register('description', {required: 'Description is required'})}
+          error={errors.description && errors.description.message}
         />
         <Form.Input 
           placeholder='City'
           defaultValue={event?.city || ''}
-          {...register('city', {required: true})}
-          error={errors.city && 'City is required'}
+          {...register('city', {required: 'City is required'})}
+          error={errors.city && errors.city.message}
         />
         <Form.Input 
           placeholder='Venue'
           defaultValue={event?.venue}
-          {...register('venue', {required: true})}
-          error={errors.Venue && 'Venue is required'}
+          {...register('venue', {required: 'Venue is required'})}
+          error={errors.venue && errors.venue.message}
         />
         <Form.Input  
           type='date'
           placeholder='Date'
           defaultValue={event?.date}
-          {...register('date', {required: true})}
-          error={errors.date && 'Date is required'}
+          {...register('date', {required: 'Venue is required'})}
+          error={errors.date && errors.date.message}
         />
         <Button 
           type='submit' 
