@@ -44,7 +44,7 @@ export default function EventForm() {
           {...register('category', {required: 'Category is required'})}
           error={errors.category && errors.category.message}
         />
-        <Form.Input  
+        <Form.TextArea  
           placeholder='Description'
           defaultValue={event?.description || ''}
           {...register('description', {required: 'Description is required'})}
