@@ -10,8 +10,10 @@ export default function EventForm() {
   const { 
     register, 
     handleSubmit, 
-    formState: { errors },
-    isValid 
+    formState: { 
+      errors,
+      isValid 
+    }
   } = useForm({
     mode: 'onTouched'
   })
@@ -49,6 +51,10 @@ export default function EventForm() {
           defaultValue={event?.description || ''}
           {...register('description', {required: 'Description is required'})}
           error={errors.description && errors.description.message}
+        />
+        <Header
+          content='Location Details'
+          sub
         />
         <Form.Input 
           placeholder='City'
