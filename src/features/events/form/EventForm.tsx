@@ -86,6 +86,7 @@ export default function EventForm() {
           <span className='btn'>Submit</span>
         </Button>
         <Button 
+          disabled={isSubmitting}
           as={Link}
           to='/event'
           type='submit' 
