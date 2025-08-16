@@ -4,8 +4,10 @@ import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { useAppDispatch, useAppSelector } from '../../../app/store/store'
 import { createEvent, updateEvent } from '../eventSlice'
 import { createId } from '@paralleldrive/cuid2'
+import { useForm } from 'react-hook-form'
 
 export default function EventForm() {
+  const { register, handleSubmit } = useForm()
   let {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
   const dispatch = useAppDispatch()
