@@ -4,7 +4,7 @@ import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { useAppDispatch, useAppSelector } from '../../../app/store/store'
 import { createEvent, updateEvent } from '../eventSlice'
 import { createId } from '@paralleldrive/cuid2'
-import { useForm } from 'react-hook-form'
+import { FieldValues, useForm } from 'react-hook-form'
 
 export default function EventForm() {
   const { register, handleSubmit } = useForm()
@@ -24,22 +24,26 @@ export default function EventForm() {
   
   const [values, setValues] = useState(initialValues) 
 
-  function onSubmit() {
-    id = id ?? createId()
+  function onSubmit(data: FieldValues) {
+    console.log(data)
+
+
+
+    // id = id ?? createId()
     
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    event 
-      ? dispatch(updateEvent({ ...event, ...values })) 
-      : dispatch(createEvent({ ...values, id, hostedBy: 'Vanessa', attendees: [], hostPhotoURL: '' }))
-    navigate(`/events/${id}`)
+    // event 
+    //   ? dispatch(updateEvent({ ...event, ...values })) 
+    //   : dispatch(createEvent({ ...values, id, hostedBy: 'Vanessa', attendees: [], hostPhotoURL: '' }))
+    // navigate(`/events/${id}`)
   }
 
-  function handleInputChange(
-    e: ChangeEvent<HTMLInputElement>
-  ) {
-    const { name, value } = e.target
-    setValues({...values, [name]: value})
-  }
+  // function handleInputChange(
+  //   e: ChangeEvent<HTMLInputElement>
+  // ) {
+  //   const { name, value } = e.target
+  //   setValues({...values, [name]: value})
+  // }
   
   return (
     <Segment clearing>
