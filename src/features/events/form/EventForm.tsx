@@ -51,16 +51,13 @@ export default function EventForm() {
         } 
       />
       <Form onSubmit={onSubmit}>
-        <Form.Field>
-          <input 
-            className='bordering' 
-            type='text' 
-            placeholder='Event Title'
-            value={values.title}
-            name='title'
-            onChange ={e => handleInputChange(e)}
-          />
-        </Form.Field>
+        <Form.Input 
+          className='bordering' 
+          placeholder='Event Title'
+          value={values.title}
+          name='title'
+          onChange ={e => handleInputChange(e)}
+        />
         <Form.Field>
           <input 
             className='bordering' 
