@@ -28,11 +28,8 @@ export default function EventForm() {
   return (
     <Segment clearing>
       <Header 
-        content={
-          event 
-          ? 'Update event' 
-          : 'Create Event'
-        } 
+        content='Event Details'
+        sub
       />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Input 
