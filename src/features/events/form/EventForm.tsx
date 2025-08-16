@@ -10,7 +10,8 @@ export default function EventForm() {
   const { 
     register, 
     handleSubmit, 
-    formState: { errors } 
+    formState: { errors },
+    isValid 
   } = useForm({
     mode: 'onTouched'
   })
@@ -72,6 +73,7 @@ export default function EventForm() {
           error={errors.date && errors.date.message}
         />
         <Button 
+          disabled={!isValid}
           type='submit' 
           color='teal' 
           floated='right'
