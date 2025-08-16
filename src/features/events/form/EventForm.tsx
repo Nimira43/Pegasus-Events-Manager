@@ -13,21 +13,9 @@ export default function EventForm() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  // const initialValues = event ?? {
-  //   title: '',
-  //   category: '',
-  //   description: '',
-  //   city: '',
-  //   venue: '',
-  //   date: '',
-  // }
-  
-  // const [values, setValues] = useState(initialValues) 
 
   function onSubmit(data: FieldValues) {
     console.log(data)
-
-
 
     // id = id ?? createId()
     
@@ -37,13 +25,6 @@ export default function EventForm() {
     //   : dispatch(createEvent({ ...values, id, hostedBy: 'Vanessa', attendees: [], hostPhotoURL: '' }))
     // navigate(`/events/${id}`)
   }
-
-  // function handleInputChange(
-  //   e: ChangeEvent<HTMLInputElement>
-  // ) {
-  //   const { name, value } = e.target
-  //   setValues({...values, [name]: value})
-  // }
   
   return (
     <Segment clearing>
@@ -81,6 +62,7 @@ export default function EventForm() {
           {...register('venue')}
         />
         <Form.Input  
+          type='date'
           placeholder='Date'
           defaultValue={event?.date}
           {...register('date')}
