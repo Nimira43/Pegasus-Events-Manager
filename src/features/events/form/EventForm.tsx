@@ -77,6 +77,7 @@ export default function EventForm() {
           error={errors.date && errors.date.message}
         />
         <Button 
+          loading={isSubmitting}
           disabled={!isValid}
           type='submit' 
           color='teal' 
