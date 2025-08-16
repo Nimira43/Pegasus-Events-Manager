@@ -7,12 +7,16 @@ import { createId } from '@paralleldrive/cuid2'
 import { FieldValues, useForm } from 'react-hook-form'
 
 export default function EventForm() {
-  const { register, handleSubmit } = useForm()
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors } 
+  } = useForm()
+  
   let {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
 
   function onSubmit(data: FieldValues) {
     console.log(data)
@@ -39,7 +43,8 @@ export default function EventForm() {
         <Form.Input 
           placeholder='Event Title'
           defaultValue={event?.title || ''}
-          {...register('title')}
+          {...register('title'), {required: true}}
+          error={}
         />
         <Form.Input 
           placeholder='Category'
