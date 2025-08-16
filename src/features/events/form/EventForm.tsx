@@ -11,7 +11,9 @@ export default function EventForm() {
     register, 
     handleSubmit, 
     formState: { errors } 
-  } = useForm()
+  } = useForm({
+    mode: 'onTouched'
+  })
   
   let {id} = useParams()
   const event = useAppSelector(state => state.events.events.find(e => e.id === id))
@@ -20,14 +22,6 @@ export default function EventForm() {
 
   function onSubmit(data: FieldValues) {
     console.log(data)
-
-    // id = id ?? createId()
-    
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    // event 
-    //   ? dispatch(updateEvent({ ...event, ...values })) 
-    //   : dispatch(createEvent({ ...values, id, hostedBy: 'Vanessa', attendees: [], hostPhotoURL: '' }))
-    // navigate(`/events/${id}`)
   }
   
   return (
@@ -43,34 +37,39 @@ export default function EventForm() {
         <Form.Input 
           placeholder='Event Title'
           defaultValue={event?.title || ''}
-          {...register('title'), {required: true}}
-          error={}
+          {...register('title', {required: true})}
+          error={errors.title && 'Title is required'}
         />
         <Form.Input 
           placeholder='Category'
           defaultValue={event?.category || ''}
-          {...register('category')}
+          {...register('category', {required: true})}
+          error={errors.category && 'Category is required'}
         />
         <Form.Input  
           placeholder='Description'
           defaultValue={event?.description || ''}
-          {...register('description')}
+          {...register('description', {required: true})}
+          error={errors.description && 'Description is required'}
         />
         <Form.Input 
           placeholder='City'
           defaultValue={event?.city || ''}
-          {...register('city')}
+          {...register('city', {required: true})}
+          error={errors.city && 'City is required'}
         />
         <Form.Input 
           placeholder='Venue'
           defaultValue={event?.venue}
-          {...register('venue')}
+          {...register('venue', {required: true})}
+          error={errors.Venue && 'Venue is required'}
         />
         <Form.Input  
           type='date'
           placeholder='Date'
           defaultValue={event?.date}
-          {...register('date')}
+          {...register('date', {required: true})}
+          error={errors.date && 'Date is required'}
         />
         <Button 
           type='submit' 
