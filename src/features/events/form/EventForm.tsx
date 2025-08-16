@@ -54,9 +54,8 @@ export default function EventForm() {
         <Form.Input 
           className='bordering' 
           placeholder='Event Title'
-          value={values.title}
-          name='title'
-          onChange ={e => handleInputChange(e)}
+          defaultValue={event?.title || ''}
+          {...register('title')}
         />
         <Form.Field>
           <input 
