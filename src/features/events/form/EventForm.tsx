@@ -13,14 +13,14 @@ export default function EventForm() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  const initialValues = event ?? {
-    title: '',
-    category: '',
-    description: '',
-    city: '',
-    venue: '',
-    date: '',
-  }
+  // const initialValues = event ?? {
+  //   title: '',
+  //   category: '',
+  //   description: '',
+  //   city: '',
+  //   venue: '',
+  //   date: '',
+  // }
   
   const [values, setValues] = useState(initialValues) 
 
