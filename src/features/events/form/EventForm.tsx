@@ -12,7 +12,8 @@ export default function EventForm() {
     handleSubmit, 
     formState: { 
       errors,
-      isValid 
+      isValid,
+      isSubmitting 
     }
   } = useForm({
     mode: 'onTouched'
