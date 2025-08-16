@@ -75,16 +75,12 @@ export default function EventForm() {
           defaultValue={event?.city || ''}
           {...register('city')}
         />
-        <Form.Field>
-          <input 
-            className='bordering' 
-            type='text' 
-            placeholder='Venue'
-            value={values.venue}
-            name='venue'
-            onChange ={e => handleInputChange(e)}      
-          />
-        </Form.Field>
+        <Form.Input 
+          className='bordering' 
+          placeholder='Venue'
+          defaultValue={event?.venue}
+          {...register('venue')}
+        />
         <Form.Field>
           <input 
             className='bordering' 
