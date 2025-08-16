@@ -50,7 +50,7 @@ export default function EventForm() {
           : 'Create Event'
         } 
       />
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Input 
           placeholder='Event Title'
           defaultValue={event?.title || ''}
