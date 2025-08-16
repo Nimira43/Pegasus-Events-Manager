@@ -81,16 +81,12 @@ export default function EventForm() {
           defaultValue={event?.venue}
           {...register('venue')}
         />
-        <Form.Field>
-          <input 
-            className='bordering' 
-            type='date' 
-            placeholder='Date'
-            value={values.date}
-            name='date'
-            onChange ={e => handleInputChange(e)}
-          />
-        </Form.Field>
+        <Form.Input 
+          className='bordering'  
+          placeholder='Date'
+          defaultValue={event?.date}
+          {...register('date')}
+        />
         <Button 
           type='submit' 
           color='teal' 
