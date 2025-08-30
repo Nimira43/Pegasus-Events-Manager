@@ -43,10 +43,10 @@ export default function EventForm() {
           error={errors.title && 'Title is required'}
         />
         <Form.Select
-        option={categoryOptions}
+          options={categoryOptions}
           placeholder='Category'
           defaultValue={event?.category || ''}
-          {...register('category', {required: 'Category is required'})}
+          {...register('category')}
           error={errors.category && errors.category.message}
         />
         <Form.TextArea  
