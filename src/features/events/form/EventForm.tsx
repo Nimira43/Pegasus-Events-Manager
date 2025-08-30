@@ -55,7 +55,13 @@ export default function EventForm() {
               placeholder='Category'
               clearable
               {...field}
-              onChange={(_, d) => setValue('category', d.value)}
+              onChange={
+                (_, d) => setValue(
+                  'category', 
+                  d.value,
+                  {shouldValidate: true}
+                )
+              }
               error={errors.category && errors.category.message}
             />
           )}
