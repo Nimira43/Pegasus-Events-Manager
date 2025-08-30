@@ -12,6 +12,7 @@ export default function EventForm() {
     register, 
     handleSubmit, 
     control,
+    setValue,
     formState: { 
       errors,
       isValid,
@@ -46,7 +47,7 @@ export default function EventForm() {
         <Controller 
           name='category'
           control={control}
-          rules={{required: 'Category is required'}}
+          rules={{ required: 'Category is required' }}
           defaultValue={event?.category}
           render={({ field }) => (
             <Form.Select
@@ -54,6 +55,7 @@ export default function EventForm() {
               placeholder='Category'
               clearable
               {...field}
+              onChange={(_, d) => setValue('category', d.value)}
               error={errors.category && errors.category.message}
             />
           )}
