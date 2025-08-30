@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../app/store/store'
 import { createEvent, updateEvent } from '../eventSlice'
 import { createId } from '@paralleldrive/cuid2'
 import { FieldValues, useForm } from 'react-hook-form'
+import { categoryOptions } from './catgoryOptions'
 
 export default function EventForm() {
   const { 
@@ -41,7 +42,8 @@ export default function EventForm() {
           {...register('title', {required: true})}
           error={errors.title && 'Title is required'}
         />
-        <Form.Input 
+        <Form.Select
+        option={categoryOptions}
           placeholder='Category'
           defaultValue={event?.category || ''}
           {...register('category', {required: 'Category is required'})}
