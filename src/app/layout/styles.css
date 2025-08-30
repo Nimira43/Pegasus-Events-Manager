@@ -112,3 +112,7 @@ input::placeholder {
   text-transform: uppercase;
   font-weight: 400;
 }
+
+.ui.dropdown > i.dropdown.icon {
+  display: none !important;
+}
