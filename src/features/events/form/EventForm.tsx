@@ -4,7 +4,7 @@ import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { useAppDispatch, useAppSelector } from '../../../app/store/store'
 import { createEvent, updateEvent } from '../eventSlice'
 import { createId } from '@paralleldrive/cuid2'
-import { FieldValues, useForm } from 'react-hook-form'
+import { Controller, FieldValues, useForm } from 'react-hook-form'
 import { categoryOptions } from './catgoryOptions'
 
 export default function EventForm() {
@@ -42,12 +42,20 @@ export default function EventForm() {
           {...register('title', {required: true})}
           error={errors.title && 'Title is required'}
         />
-        <Form.Select
-          options={categoryOptions}
-          placeholder='Category'
-          defaultValue={event?.category || ''}
-          {...register('category')}
-          error={errors.category && errors.category.message}
+        <Controller 
+          name='category'
+          control={control}
+          rules={{required: 'Category is required'}}
+          defaultValue={event?.category}
+          render={({ field }) => (
+            <Form.Select
+              options={categoryOptions}
+              placeholder='Category'
+              defaultValue={event?.category || ''}
+              {...register('category')}
+              error={errors.category && errors.category.message}
+            />
+          )}
         />
         <Form.TextArea  
           placeholder='Description'
