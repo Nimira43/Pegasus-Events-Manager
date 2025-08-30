@@ -11,6 +11,7 @@ export default function EventForm() {
   const { 
     register, 
     handleSubmit, 
+    control,
     formState: { 
       errors,
       isValid,
@@ -51,8 +52,8 @@ export default function EventForm() {
             <Form.Select
               options={categoryOptions}
               placeholder='Category'
-              defaultValue={event?.category || ''}
-              {...register('category')}
+              clearable
+              {...field}
               error={errors.category && errors.category.message}
             />
           )}
