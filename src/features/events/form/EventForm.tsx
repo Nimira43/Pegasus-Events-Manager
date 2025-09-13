@@ -90,6 +90,19 @@ export default function EventForm() {
           {...register('venue', {required: 'Venue is required'})}
           error={errors.venue && errors.venue.message}
         />
+        
+        <Form.Field>
+          <Controller 
+            name='date'
+            control={control}
+            rules={{required: 'Date is required'}}
+            defaultValue={
+              event && new Date(event.date) || null
+            }
+          />
+        </Form.Field>
+        
+
         <Form.Input  
           type='date'
           placeholder='Date'
@@ -97,6 +110,10 @@ export default function EventForm() {
           {...register('date', {required: 'Venue is required'})}
           error={errors.date && errors.date.message}
         />
+
+        
+
+
         <Button 
           loading={isSubmitting}
           disabled={!isValid}
