@@ -116,3 +116,7 @@ input::placeholder {
 .ui.dropdown > i.dropdown.icon {
   display: none !important;
 }
+
+.react-datepicker-wrapper {
+  width: 100%;
+}

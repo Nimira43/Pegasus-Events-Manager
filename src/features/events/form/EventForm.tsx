@@ -121,15 +121,6 @@ export default function EventForm() {
           />
         </Form.Field>
 
-        <Form.Input  
-          type='date'
-          placeholder='Date'
-          defaultValue={event?.date}
-          {...register('date', {required: 'Venue is required'})}
-          error={errors.date && errors.date.message}
-        />
-
-
         <Button 
           loading={isSubmitting}
           disabled={!isValid}
