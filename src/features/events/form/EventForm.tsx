@@ -90,7 +90,8 @@ export default function EventForm() {
           {...register('venue', {required: 'Venue is required'})}
           error={errors.venue && errors.venue.message}
         />
-        
+
+
         <Form.Field>
           <Controller 
             name='date'
@@ -111,11 +112,14 @@ export default function EventForm() {
                     {shouldValidate: true}
                   )
                 }
+                showTimeSelect
+                timeCaption='time'
+                dateFormat='dd/MM/yyyy HH:mm'
+                placeholderText='Event date and time'
               />
             )}
           />
         </Form.Field>
-        
 
         <Form.Input  
           type='date'
@@ -124,8 +128,6 @@ export default function EventForm() {
           {...register('date', {required: 'Venue is required'})}
           error={errors.date && errors.date.message}
         />
-
-        
 
 
         <Button 
