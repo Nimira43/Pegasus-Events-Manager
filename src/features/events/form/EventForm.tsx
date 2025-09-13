@@ -95,10 +95,24 @@ export default function EventForm() {
           <Controller 
             name='date'
             control={control}
-            rules={{required: 'Date is required'}}
+            rules={{
+              required: 'Date is required'
+            }}
             defaultValue={
               event && new Date(event.date) || null
             }
+            render={({field}) => (
+              <DatePicker 
+                selected={field.value}
+                onChange={
+                  value => setValue(
+                    'date', 
+                    value, 
+                    {shouldValidate: true}
+                  )
+                }
+              />
+            )}
           />
         </Form.Field>
         
