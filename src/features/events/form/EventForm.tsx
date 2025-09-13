@@ -6,6 +6,8 @@ import { createEvent, updateEvent } from '../eventSlice'
 import { createId } from '@paralleldrive/cuid2'
 import { Controller, FieldValues, useForm } from 'react-hook-form'
 import { categoryOptions } from './catgoryOptions'
+import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-datepicker'
 
 export default function EventForm() {
   const { 
