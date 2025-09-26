@@ -1,4 +1,3 @@
-import { ChangeEvent, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button, Form, Header, Segment } from 'semantic-ui-react'
 import { useAppDispatch, useAppSelector } from '../../../app/store/store'
@@ -30,7 +29,11 @@ export default function EventForm() {
   const navigate = useNavigate()
 
   function onSubmit(data: FieldValues) {
-    console.log(data)
+    id = id ?? createId()
+    event
+      ? dispatch(updateEvent({ ...event, ...data, date: data.date.toString()}))
+      : dispatch(createEvent({ ...data, id, hostedBy: 'bob', attendees: [], hostPhotoURL: '', date: data.date.toString()}))
+    navigate(`/events/${id}`)
   }
   
   return (
