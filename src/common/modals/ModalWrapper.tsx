@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { ModalProps } from 'semantic-ui-react'
-import { useAppSelector } from '../../app/store/store'
+import { useAppDispatch, useAppSelector } from '../../app/store/store'
 
 type Props = {
   children: ReactNode
@@ -14,6 +14,7 @@ export default function ModalWrapper({
 
 }: Props) {
   const {open} = useAppSelector(state => state.modals)
+  const dispatch = useAppDispatch()
 
   return (
     <div>ModalWrapper</div>
