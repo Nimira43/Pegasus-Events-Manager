@@ -16,6 +16,8 @@ export const modalSlice = createSlice({
   name: 'modal',
   initialState,
   reducers: {
-    openModal: 
+    openModal: (state, action) => {
+      state.type = action.payload.type
+    }
   },
 })
