@@ -28,14 +28,32 @@ export default function EventForm() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
+  // function onSubmit(data: FieldValues) {
+  //   id = id ?? createId()
+  //   event
+  //     ? dispatch(updateEvent({ ...event, ...data }))
+  //     : dispatch(createEvent({ ...data, id, hostedBy: 'bob', attendees: [], hostPhotoURL: ''}))
+  //   navigate(`/events/${id}`)
+  // } 
+  
   function onSubmit(data: FieldValues) {
     id = id ?? createId()
-    event
-      ? dispatch(updateEvent({ ...event, ...data, date: data.date.toString()}))
-      : dispatch(createEvent({ ...data, id, hostedBy: 'bob', attendees: [], hostPhotoURL: '', date: data.date.toString()}))
+
+    if (event) {
+      dispatch(updateEvent({ ...event, ...data }))
+    } else {
+      dispatch(createEvent({ 
+        ...data, 
+        id, 
+        hostedBy: 'bob', 
+        attendees: [], 
+        hostPhotoURL: '' 
+      }))
+    }
+
     navigate(`/events/${id}`)
   }
-  
+
   return (
     <Segment clearing>
       <Header 
