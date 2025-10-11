@@ -6,7 +6,12 @@ type Props = {
   header: string
 } & ModalProps
 
-export default function ModalWrapper() {
+export default function ModalWrapper({
+  children,
+  header,
+  ...props
+
+}: Props) {
   return (
     <div>ModalWrapper</div>
   )
