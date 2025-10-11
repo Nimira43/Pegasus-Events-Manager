@@ -5,12 +5,12 @@ import { closeModal } from './modalSlice'
 
 type Props = {
   children: ReactNode
-  header: string
+  header?: string
 } & ModalProps
 
 export default function ModalWrapper({
   children,
-  header?,
+  header,
   ...props
 }: Props) {
   const {open} = useAppSelector(state => state.modals)
@@ -25,7 +25,9 @@ export default function ModalWrapper({
       {header && 
         <Modal.Header>{header}</Modal.Header>
       }
-      <Modal.Content></Modal.Content>
+      <Modal.Content>
+        {children}
+      </Modal.Content>
     </Modal>
   )
 }
