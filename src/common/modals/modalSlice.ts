@@ -4,3 +4,8 @@ type State = {
   data: any
 }
 
+const initialState: State = {
+  open: false,
+  type: null,
+  data: null
+}
