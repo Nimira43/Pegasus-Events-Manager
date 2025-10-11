@@ -35,22 +35,26 @@ export default function EventForm() {
   //     : dispatch(createEvent({ ...data, id, hostedBy: 'bob', attendees: [], hostPhotoURL: ''}))
   //   navigate(`/events/${id}`)
   // } 
-  
+
   function onSubmit(data: FieldValues) {
     id = id ?? createId()
 
     if (event) {
-      dispatch(updateEvent({ ...event, ...data }))
+      dispatch(updateEvent({ 
+        ...event, 
+        ...data,
+        date: data.toString()
+      }))
     } else {
       dispatch(createEvent({ 
         ...data, 
         id, 
         hostedBy: 'bob', 
         attendees: [], 
-        hostPhotoURL: '' 
+        hostPhotoURL: '',
+        date: data.date.toString() 
       }))
     }
-
     navigate(`/events/${id}`)
   }
 
