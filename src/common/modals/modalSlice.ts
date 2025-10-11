@@ -18,6 +18,8 @@ export const modalSlice = createSlice({
   reducers: {
     openModal: (state, action) => {
       state.type = action.payload.type
+      state.open = true
+      state.data = action.payload.data
     }
   },
 })
