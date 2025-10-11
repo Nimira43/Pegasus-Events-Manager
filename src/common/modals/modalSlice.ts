@@ -1,3 +1,5 @@
+import { createSlice } from '@reduxjs/toolkit'
+
 type State = {
   open: boolean
   type: string | null
@@ -9,3 +11,11 @@ const initialState: State = {
   type: null,
   data: null
 }
+
+export const modalSlice = createSlice({
+  name: 'modal',
+  initialState,
+  reducers: {
+    openModal: 
+  },
+})
