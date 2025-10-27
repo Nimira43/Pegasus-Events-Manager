@@ -70,7 +70,7 @@ input, form, label, textarea, button, select, option{
 
 .btn {
   color: var(--bg-text-light);
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
 }
 

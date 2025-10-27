@@ -43,13 +43,15 @@ export default function LoginForm() {
         />
         <Button 
           loading={isSubmitting}
-          disabled={isValid || isDirty || isSubmitting}
+          disabled={!isValid || !isDirty || isSubmitting}
           type='submit'
           fluid
           size='large'
           color='teal'
           content='Login' 
-        />
+        >
+          <span className='btn'>Login</span>
+        </Button>
       </Form>
     </ModalWrapper>
   )
