@@ -31,6 +31,8 @@ export default function LoginForm() {
         <Form.Input 
           defaultValue=''
           placeholder='Email address'
+          {...register('email', {required: true})}
+          error={errors.email && 'Email is required.'}
         />
       </Form>
     </ModalWrapper>
