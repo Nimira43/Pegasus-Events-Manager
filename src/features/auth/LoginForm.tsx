@@ -26,10 +26,12 @@ export default function LoginForm() {
   }
 
   return (
-    <ModalWrapper header='Login to Pegasus'
-    >
-      <Form>
-
+    <ModalWrapper header='Login to Pegasus'>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form.Input 
+          defaultValue=''
+          placeholder='Email address'
+        />
       </Form>
     </ModalWrapper>
   )
