@@ -1,6 +1,9 @@
 import { MenuItem, Button } from 'semantic-ui-react'
+import { useAppDispatch } from '../../store/store'
 
-export default function SignedOutButtons({setAuth}: Props) {
+export default function SignedOutButtons() {
+  const dispatch = useAppDispatch()
+  
   return (
     <MenuItem position='right'>
       <Button
