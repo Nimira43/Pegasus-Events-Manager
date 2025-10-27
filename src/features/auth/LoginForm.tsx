@@ -1,5 +1,6 @@
 import { Form } from 'semantic-ui-react'
 import ModalWrapper from '../../common/modals/ModalWrapper'
+import { FieldValues, useForm } from 'react-hook-form'
 
 export default function LoginForm() {
   const {
@@ -14,6 +15,10 @@ export default function LoginForm() {
   } = useForm({
     mode: 'onTouched'
   })
+
+  function onSubmit(data: FieldValues) {
+    console.log(data)
+  }
 
   return (
     <ModalWrapper header='Login to Pegasus'
