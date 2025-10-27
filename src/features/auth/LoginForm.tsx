@@ -31,14 +31,24 @@ export default function LoginForm() {
         <Form.Input 
           defaultValue=''
           placeholder='Email'
-          {...register('email', {required: true})}
+          {...register('email', {
+            required: true,
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'Please enter a valid email address.'
+            }
+
+          })}
           error={errors.email && 'Email is required.'}
         />
         <Form.Input
           type='password' 
           defaultValue=''
           placeholder='Password'
-          {...register('password', {required: true})}
+          {...register('password', {
+            required: true,
+            pattern: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/
+          })}
           error={errors.password && 'Password is required.'}
         />
         <Button 
