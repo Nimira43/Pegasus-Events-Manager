@@ -1,4 +1,4 @@
-import { Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import ModalWrapper from '../../common/modals/ModalWrapper'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useAppDispatch } from '../../app/store/store'
@@ -40,6 +40,15 @@ export default function LoginForm() {
           placeholder='Password'
           {...register('password', {required: true})}
           error={errors.password && 'Password is required.'}
+        />
+        <Button 
+          loading={isSubmitting}
+          disabled={isValid || isDirty || isSubmitting}
+          type='submit'
+          fluid
+          size='large'
+          color='teal'
+          content='Login' 
         />
       </Form>
     </ModalWrapper>
