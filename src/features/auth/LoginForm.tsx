@@ -33,13 +33,12 @@ export default function LoginForm() {
           placeholder='Email'
           {...register('email', {
             required: true,
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: 'Please enter a valid email address.'
-            }
-
+            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
           })}
-          error={errors.email && 'Email is required.'}
+          error={
+            errors.email?.type === 'required' && 'Email is required.' ||
+            errors.email?.type === 'pattern' && 'Email is invalid.'
+          }
         />
         <Form.Input
           type='password' 
@@ -49,7 +48,10 @@ export default function LoginForm() {
             required: true,
             pattern: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/
           })}
-          error={errors.password && 'Password is required.'}
+          error={
+            errors.password?.type === 'required' && 'Password is required.' ||
+            errors.password?.type === 'pattern' && 'Password must have 8 or more characters with at least one uppercase letter, a symbol and a number.'
+          }
         />
         <Button 
           loading={isSubmitting}
