@@ -30,9 +30,16 @@ export default function LoginForm() {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Input 
           defaultValue=''
-          placeholder='Email address'
+          placeholder='Email'
           {...register('email', {required: true})}
           error={errors.email && 'Email is required.'}
+        />
+        <Form.Input
+          type='password' 
+          defaultValue=''
+          placeholder='Password'
+          {...register('password', {required: true})}
+          error={errors.password && 'Password is required.'}
         />
       </Form>
     </ModalWrapper>
