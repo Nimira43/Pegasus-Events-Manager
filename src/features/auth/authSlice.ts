@@ -15,7 +15,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signedIn: (state, action) => {
+    signIn: (state, action) => {
       state.authenticated = true
       state.currentUser = {
         email: action.payload.email,
@@ -28,3 +28,5 @@ export const authSlice = createSlice({
     }
   }
 })
+
+export const { signIn, signOut } = authSlice.actions
