@@ -16,7 +16,7 @@ export default function SignedInMenu() {
   return (
     <Menu.Item position='right'>
       <Image avatar spaced='right' src='/user.png' />
-      <Dropdown pointing='top left' text='Lenny'>
+      <Dropdown pointing='top left' text={currentUser?.email}>
         <Dropdown.Menu>
           <Dropdown.Item as={Link} to='/createEvent' text='Create Event' />
           <Dropdown.Item text='My Profile' />
