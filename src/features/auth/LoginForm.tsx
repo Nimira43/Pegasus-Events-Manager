@@ -59,8 +59,7 @@ export default function LoginForm() {
           type='submit'
           fluid
           size='large'
-          color='teal'
-          content='Login' 
+          color='teal' 
         >
           <span className='btn'>Login</span>
         </Button>
