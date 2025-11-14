@@ -1,7 +1,7 @@
 import { Dropdown, Image, Menu } from 'semantic-ui-react'
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function SignedInMenu({ setAuth }: Props) {
+export default function SignedInMenu() {
   const navigate = useNavigate()
 
   function handleSignOut() {
