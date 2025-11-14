@@ -1,4 +1,11 @@
-type Slice = {
+import { User } from '../../app/types/user'
+
+type State = {
   authenticated: boolean
-  currenUser: User | null
+  currentUser: User | null
+}
+
+const initialState: State = {
+  authenticated: false,
+  currentUser: null
 }
