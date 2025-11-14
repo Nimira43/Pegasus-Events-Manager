@@ -3,6 +3,7 @@ import ModalWrapper from '../../common/modals/ModalWrapper'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useAppDispatch } from '../../app/store/store'
 import { closeModal } from '../../common/modals/modalSlice'
+import { signIn } from './authSlice'
 
 export default function LoginForm() {
   const {
@@ -21,7 +22,7 @@ export default function LoginForm() {
   const dispatch =  useAppDispatch()
 
   function onSubmit(data: FieldValues) {
-    console.log(data)
+    dispatch(signIn(data))
     dispatch(closeModal())
   }
 
