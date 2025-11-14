@@ -1,7 +1,10 @@
 import { Dropdown, Image, Menu } from 'semantic-ui-react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAppSelector } from '../../store/store'
 
 export default function SignedInMenu() {
+  const {currentUser} = useAppSelector(state => state.auth)
+
   const navigate = useNavigate()
 
   function handleSignOut() {
