@@ -45,9 +45,9 @@ export default function NavBar() {
         </MenuItem>
         {auth
           ?
-          <SignedInMenu setAuth={setAuth} />
+          <SignedInMenu />
           :
-          <SignedOutButtons setAuth={setAuth} />
+          <SignedOutButtons />
         }
       </Container>  
     </Menu>
