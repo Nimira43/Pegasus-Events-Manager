@@ -2,10 +2,8 @@ import { NavLink } from 'react-router-dom'
 import { Button, Container, Menu, MenuItem } from 'semantic-ui-react'
 import SignedOutButtons from './SignedOutButtons'
 import SignedInMenu from './SignedInMenu'
-import { useState } from 'react'
 
 export default function NavBar() {
-  const [auth, setAuth] = useState(false)
 
   return (
     <Menu inverted={true} fixed='top'>
