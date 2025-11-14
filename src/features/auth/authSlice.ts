@@ -17,6 +17,14 @@ export const authSlice = createSlice({
   reducers: {
     signedIn: (state, action) => {
       state.authenticated = true
+      state.currentUser = {
+        email: action.payload.email,
+        photoURL: '/user.png'
+      }
+    },
+    signOut: (state) => {
+      state.authenticated = false
+      state.currentUser = null
     }
   }
 })
