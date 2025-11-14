@@ -42,7 +42,7 @@ export default function NavBar() {
             <span className='btn'>Create Event</span>
           </Button>
         </MenuItem>
-        {auth
+        {authenticated
           ?
           <SignedInMenu />
           :
