@@ -3,7 +3,7 @@ import { Timestamp } from "firebase/firestore";
 export const sampleData = [
   {
     id: '1',
-    title: 'Birthday party for Megan',
+    title: 'Birthday party for Amy',
     date: Timestamp.fromDate(new Date(Date.now() + 23 * 86400000)),
     category: 'food',
     description:
@@ -11,9 +11,9 @@ export const sampleData = [
     city: 'Manchester, UK',
     venue: 'Vanessa Dobson, 29 Romford Road, Manchester, UK',
     hostedBy: 'Vanessa',
-    hostPhotoURL: 'https://randomuser.me/api/portraits/women/82.jpg',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/women/84.jpg',
     attendees: [
-      { id: 'a', name: 'Megan', photoURL: 'https://randomuser.me/api/portraits/women/55.jpg' },
+      { id: 'a', name: 'Vanessa', photoURL: 'https://randomuser.me/api/portraits/women/55.jpg' },
       { id: 'b', name: 'Danny', photoURL: 'https://randomuser.me/api/portraits/men/73.jpg' },
       { id: 'c', name: 'Phil', photoURL: 'https://randomuser.me/api/portraits/men/38.jpg' }
     ]

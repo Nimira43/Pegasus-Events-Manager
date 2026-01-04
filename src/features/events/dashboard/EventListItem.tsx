@@ -45,7 +45,7 @@ export default function EventListItem({ event }: Props) {
         </List>
       </Segment>
       <Segment clearing>
-        <span>{event.description}</span>
+        <p>{event.description}</p>
         <Button
           onClick={() => dispatch(deleteEvent(event.id))}
           color='teal'
