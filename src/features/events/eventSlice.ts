@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { sampleData } from '../../app/api/sampleData'
 import { AppEvent } from '../../app/types/events'
 
 type State = {
@@ -7,13 +6,16 @@ type State = {
 }
 
 const initialState: State = {
-  events: sampleData
+  events: []
 }
 
 export const eventSlice = createSlice({
   name: 'events',
   initialState,
   reducers: {
+    setEvents: (state, action) => {
+      state.events = action.payload
+    }, 
     createEvent: (state, action) => {
       state.events.push(action.payload)
     },
@@ -29,5 +31,6 @@ export const eventSlice = createSlice({
 export const {
   createEvent,
   updateEvent,
-  deleteEvent
+  deleteEvent,
+  setEvents
 } = eventSlice.actions
