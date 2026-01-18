@@ -40,26 +40,30 @@ export default function EventListItem({ event }: Props) {
       <Segment secondary>
         <List horizontal>
           {event.attendees.map(attendee => (
-            <EventListAttendee key={attendee.id} attendee={attendee} />
+            <EventListAttendee
+              key={attendee.id}
+              attendee={attendee}
+            />
           ))}
         </List>
       </Segment>
       <Segment clearing>
         <p>{event.description}</p>
-        <Button
-          onClick={() => dispatch(deleteEvent(event.id))}
-          color='teal'
-          floated='right' 
-        >
-          <span className='btn'>Delete</span>
-        </Button> 
+        
         <Button
           as={Link}
           to={`/events/${event.id}`}
-          color='black'
+          color='teal'
           floated='right' 
         >
           <span className='btn'>View</span>
+        </Button>
+        <Button
+          onClick={() => dispatch(deleteEvent(event.id))}
+          color='black'
+          floated='right' 
+        >
+          <span className='btn'>Delete</span>
         </Button> 
       </Segment>
     </SegmentGroup>
