@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker'
 import { AppEvent } from '../../../app/types/events'
 import { collection, doc, setDoc, Timestamp, updateDoc } from 'firebase/firestore'
 import { db } from '../../../app/config/firebase'
+import { toast } from 'react-toastify'
 
 export default function EventForm() {
   const { 
@@ -59,7 +60,8 @@ export default function EventForm() {
         const ref = await createEvent(data)
         navigate(`/events/${ref.id}`)
       }
-    } catch (error) {
+    } catch (error: any) {
+      toast.error(error.message)
       console.log(error)
     }
   }
