@@ -4,15 +4,29 @@ import { AppEvent } from '../../../app/types/events'
 import { LuClock3 } from 'react-icons/lu'
 import { MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
-import { useAppDispatch } from '../../../app/store/store'
-import { deleteEvent } from '../eventSlice'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { deleteDoc, doc } from 'firebase/firestore'
+import { db } from '../../../app/config/firebase'
 
 type Props = {
   event: AppEvent,
 }
 
 export default function EventListItem({ event }: Props) {
-  const dispatch = useAppDispatch()
+  const [loading, setLoading] = useState(false)
+
+  async function removeEvent() {
+    setLoading(true)
+    try {
+      await deleteDoc(doc(db, 'events', event.id))
+    } catch (error: any) {
+      console.log(error)
+      toast.error(error.message)
+    } finally {
+      setLoading(false)
+    }
+  } 
 
   return (
     <SegmentGroup>
@@ -49,7 +63,14 @@ export default function EventListItem({ event }: Props) {
       </Segment>
       <Segment clearing>
         <p>{event.description}</p>
-        
+        <Button
+          loading={loading}
+          onClick={removeEvent}
+          color='black'
+          floated='right' 
+        >
+          <span className='btn'>Delete</span>
+        </Button> 
         <Button
           as={Link}
           to={`/events/${event.id}`}
@@ -58,13 +79,6 @@ export default function EventListItem({ event }: Props) {
         >
           <span className='btn'>View</span>
         </Button>
-        <Button
-          onClick={() => dispatch(deleteEvent(event.id))}
-          color='black'
-          floated='right' 
-        >
-          <span className='btn'>Delete</span>
-        </Button> 
       </Segment>
     </SegmentGroup>
   )
