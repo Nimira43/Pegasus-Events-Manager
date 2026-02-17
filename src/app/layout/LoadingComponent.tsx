@@ -1,4 +1,4 @@
-import { Dimmer, Loader } from "semantic-ui-react"
+import { Dimmer, Loader } from 'semantic-ui-react'
 
 type Props = {
   inverted?: boolean

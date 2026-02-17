@@ -14,18 +14,14 @@
   --grey: #999;
 }
 
+* {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300;
+}
+
 body {
   background-color: var(--teal-light);
   color: var(--dark);
-}
-
-h1, h2, h3, h4, h5, h6, p,
-a, i, li,
-header, footer,
-div, main, section, span, article, nav,
-input, form, label, textarea, button, select, option{
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
 }
 
 .icon  {

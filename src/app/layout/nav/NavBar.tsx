@@ -67,10 +67,8 @@ export default function NavBar() {
           </MenuItem>
         )}
         {authenticated
-          ?
-          <SignedInMenu />
-          :
-          <SignedOutButtons />
+          ? <SignedInMenu />
+          : <SignedOutButtons />
         }
       </Container>  
     </Menu>
