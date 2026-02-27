@@ -23,7 +23,6 @@ export const eventSlice = createSlice({
       },
       prepare: (events: any) => {
         let eventArray: AppEvent[] = []
-        // Array.isArray(events) ? eventArray = events : eventArray.push(events)
 
         if (Array.isArray(events)) {
           eventArray = events
@@ -37,7 +36,6 @@ export const eventSlice = createSlice({
         return { payload: mapped }
       }
     }, 
-    
   }
 })
 
