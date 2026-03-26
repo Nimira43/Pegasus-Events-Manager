@@ -4,29 +4,14 @@ import { AppEvent } from '../../../app/types/events'
 import { LuClock3 } from 'react-icons/lu'
 import { MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { toast } from 'react-toastify'
-import { deleteDoc, doc } from 'firebase/firestore'
-import { db } from '../../../app/config/firebase'
+import { useFireStore } from '../../../app/hooks/firestore/useFirestore'
 
 type Props = {
   event: AppEvent,
 }
 
 export default function EventListItem({ event }: Props) {
-  const [loading, setLoading] = useState(false)
-
-  async function removeEvent() {
-    setLoading(true)
-    try {
-      await deleteDoc(doc(db, 'events', event.id))
-    } catch (error: any) {
-      console.log(error)
-      toast.error(error.message)
-    } finally {
-      setLoading(false)
-    }
-  } 
+  const {remove} = useFireStore('events')
 
   return (
     <SegmentGroup>
@@ -64,8 +49,7 @@ export default function EventListItem({ event }: Props) {
       <Segment clearing>
         <p>{event.description}</p>
         <Button
-          loading={loading}
-          onClick={removeEvent}
+          onClick={() => remove(event.id)}
           color='black'
           floated='right' 
         >
