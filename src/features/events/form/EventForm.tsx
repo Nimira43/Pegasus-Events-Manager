@@ -65,6 +65,19 @@ export default function EventForm() {
     return ref
   }
 
+  async function handleCancelToggle(event: AppEvent) {
+    await update(event.id, {
+      isCancelled: !event.isCancelled
+    })
+    toast.success(`
+      Event has been ${
+        event.isCancelled
+          ? 'reinstated'
+          : 'cancelled'
+      }   
+    `)
+  }
+
   async function onSubmit(data: FieldValues) {
     try {
       if (event) {
@@ -171,6 +184,28 @@ export default function EventForm() {
             )}
           />
         </Form.Field>
+
+        {event && (
+          <Button
+            type='button'
+            floated='left'
+            color={
+              event.isCancelled 
+                ? 'teal'
+                : 'black'
+            }
+          >
+            <span 
+              onClick={() => handleCancelToggle(event)}
+              className='btn'
+            >
+              {event.isCancelled 
+                  ? 'Reinstate Event'
+                  : 'Cancel Event'
+              }
+            </span>
+          </Button>
+        )}
 
         <Button 
           loading={isSubmitting}
