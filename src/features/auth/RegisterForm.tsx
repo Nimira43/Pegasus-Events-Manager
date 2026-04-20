@@ -3,10 +3,11 @@ import ModalWrapper from '../../app/common/modals/ModalWrapper'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useAppDispatch } from '../../app/store/store'
 import { closeModal } from '../../app/common/modals/modalSlice'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth } from '../../app/config/firebase'
+import { signIn } from './authSlice'
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const {
     register, 
     handleSubmit,
@@ -24,7 +25,11 @@ export default function LoginForm() {
 
   async function onSubmit(data: FieldValues) {
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password)
+      const userCreds = await createUserWithEmailAndPassword(auth, data.email, data.password)
+      await updateProfile(userCreds.user, {
+        displayName: data.displayName
+      })
+      dispatch(signIn(userCreds.user))
       dispatch(closeModal())
     } catch (error) {
       console.log(error)
@@ -32,8 +37,18 @@ export default function LoginForm() {
   }
 
   return (
-    <ModalWrapper header='Login to Pegasus'>
+    <ModalWrapper header='Register to Pegasus'>
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form.Input 
+          defaultValue=''
+          placeholder='Display name'
+          {...register('displayName', {
+            required: true,
+          })}
+          error={
+            errors.displayName && 'Display name is required.' 
+          }
+        />
         <Form.Input 
           defaultValue=''
           placeholder='Email'
@@ -67,7 +82,7 @@ export default function LoginForm() {
           size='large'
           color='teal' 
         >
-          <span className='btn'>Login</span>
+          <span className='btn'>Register</span>
         </Button>
       </Form>
     </ModalWrapper>

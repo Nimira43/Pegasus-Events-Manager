@@ -1,7 +1,7 @@
 import { Button } from 'semantic-ui-react'
 import { useAppDispatch, useAppSelector } from '../store/store'
 import { decrement, increment, incrementByAmount } from './testSlice'
-import { openModal } from '../../common/modals/modalSlice'
+import { openModal } from '../common/modals/modalSlice'
 
 export default function Scratch() {
   const {data} = useAppSelector(state => state.test)

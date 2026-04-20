@@ -1,6 +1,6 @@
 import { MenuItem, Button } from 'semantic-ui-react'
 import { useAppDispatch } from '../../store/store'
-import { openModal } from '../../../common/modals/modalSlice'
+import { openModal } from '../../common/modals/modalSlice'
 
 export default function SignedOutButtons() {
   const dispatch = useAppDispatch()
@@ -11,7 +11,13 @@ export default function SignedOutButtons() {
         basic 
         inverted
         color='teal'
-        onClick={() => dispatch(openModal({type: 'LoginForm'}))}
+        onClick={
+          () => dispatch(
+            openModal(
+              { type: 'LoginForm' }
+            )
+          )
+        }
       >
         <span className='btn'>Login</span>
       </Button>
@@ -19,8 +25,15 @@ export default function SignedOutButtons() {
         basic 
         inverted
         color='teal' 
-        style={{marginLeft: '0.5em'}}
-        >
+        style={{ marginLeft: '0.5em' }}
+        onClick={
+          () => dispatch(
+            openModal(
+              { type: 'RegisterForm' }
+            )
+          )
+        } 
+      >
         <span className='btn'>Register</span>
       </Button>
     </MenuItem>
