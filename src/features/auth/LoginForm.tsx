@@ -1,4 +1,4 @@
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Label } from 'semantic-ui-react'
 import ModalWrapper from '../../app/common/modals/ModalWrapper'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useAppDispatch } from '../../app/store/store'
@@ -10,6 +10,7 @@ export default function LoginForm() {
   const {
     register, 
     handleSubmit,
+    setError,
     formState: {
       isSubmitting,
       isValid,
@@ -26,8 +27,10 @@ export default function LoginForm() {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password)
       dispatch(closeModal())
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      setError('root.serverError', {
+        type: '400', message: error.message
+      })
     }  
   }
 
@@ -59,6 +62,17 @@ export default function LoginForm() {
             errors.password?.type === 'pattern' && 'Password must have 8 or more characters with at least one uppercase letter, a symbol and a number.'
           }
         />
+        {errors.root && (
+          <Label
+            basic
+            color='red'
+            style={{
+              display: 'block',
+              marginBottom: 10
+            }}
+            content={errors.root.serverError.message}
+          />
+        )}
         <Button 
           loading={isSubmitting}
           disabled={!isValid || !isDirty || isSubmitting}
