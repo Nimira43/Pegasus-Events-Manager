@@ -57,7 +57,8 @@ export default function NavBar() {
         </MenuItem>
         {import.meta.env.DEV && (
           <MenuItem>
-            <Button 
+            <Button
+              basic  
               inverted 
               color='teal'
               onClick={seedData}
