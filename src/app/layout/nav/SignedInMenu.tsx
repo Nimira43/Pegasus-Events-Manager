@@ -26,9 +26,21 @@ export default function SignedInMenu() {
         text={currentUser?.displayName as string}
       >
         <Dropdown.Menu>
-          <Dropdown.Item as={Link} to='/createEvent' text='Create Event' />
+          <Dropdown.Item
+            as={Link}
+            to='/createEvent'
+            text='Create Event'
+          />
           <Dropdown.Item text='My Profile' />
-          <Dropdown.Item onClick={handleSignOut} text='Sign Out' />
+          <Dropdown.Item
+            as={Link}
+            to='/account'
+            text='My Account'
+          />
+          <Dropdown.Item
+            onClick={handleSignOut}
+            text='Sign Out'
+          />
         </Dropdown.Menu>
       </Dropdown>
     </Menu.Item>
