@@ -1,6 +1,11 @@
 import { Button, Divider, Grid, Header, Item, Reveal, Segment, Statistic } from 'semantic-ui-react'
+import { Profile } from '../../app/types/profile'
 
-export default function ProfileHeader() {
+type Props = {
+  profile: Profile
+}
+
+export default function ProfileHeader({ profile }: Props ) {
   return (
     <Segment>
       <Grid>      
@@ -10,7 +15,7 @@ export default function ProfileHeader() {
               <Item.Image
                 avatar
                 size='small'
-                src='/user.png'
+                src={profile.photoURL || '/user.png'}
               />
               <Item.Content verticalAlign='middle'>
                 <Header
@@ -19,7 +24,7 @@ export default function ProfileHeader() {
                     display: 'block',
                     marginBottom: 10
                   }}
-                  content='Display Name'
+                  content={profile.displayName}
                 />
               </Item.Content>
             </Item>
