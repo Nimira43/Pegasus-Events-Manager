@@ -1,6 +1,14 @@
 import { Tab } from 'semantic-ui-react'
+import ProfileAbout from './ProfileAbout'
+import { Profile } from '../../app/types/profile'
 
-export default function ProfileContent() {
+type Props = {
+  profile: Profile
+}
+
+export default function ProfileContent({
+  profile
+}: Props) {
   const contentStyle = {
     background: 'white',
     padding: '1.5rem',
@@ -12,7 +20,12 @@ export default function ProfileContent() {
   const panes = [
     {
       menuItem: 'About',
-      render: () => <div style={contentStyle}>About User</div>
+      render: () => (
+        <ProfileAbout
+          profile={profile}
+          contentStyle={contentStyle}
+        />
+      )
     },
     {
       menuItem: 'Photos',
