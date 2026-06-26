@@ -2,6 +2,7 @@ import { Button, Grid, Header } from 'semantic-ui-react'
 import { Profile } from '../../app/types/profile'
 import { useState } from 'react'
 import { LiaUser } from 'react-icons/lia'
+import ProfileForm from './ProfileForm'
 
 type Props = {
   profile: Profile
@@ -60,7 +61,10 @@ export default function ProfileAbout({ profile, contentStyle }: Props) {
 
         <Grid.Column width={16}>
           {editMode ? (
-            <p>Profile Form</p>
+            <ProfileForm
+              profile={profile}
+              setEditMode={setEditMode}
+            />
           ) : (
             <>
               <div style={{ marginBottom: 10 }}>
