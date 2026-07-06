@@ -3,6 +3,7 @@ import { Profile } from '../../app/types/profile'
 import { useState } from 'react'
 import { LiaUser } from 'react-icons/lia'
 import ProfileForm from './ProfileForm'
+import { auth } from '../../app/config/firebase'
 
 type Props = {
   profile: Profile
@@ -11,6 +12,7 @@ type Props = {
 
 export default function ProfileAbout({ profile, contentStyle }: Props) {
   const [editMode, setEditMode] = useState(false)
+  const isCurrentUser = auth.currentUser?.uid === profile.id
 
   return (
     <div style={contentStyle}>
@@ -44,18 +46,19 @@ export default function ProfileAbout({ profile, contentStyle }: Props) {
                 </span>
               </div>
             </Header>
-
-            <Button
-              basic
-              content={
-                editMode
+            {isCurrentUser &&
+              <Button
+                basic
+                content={
+                  editMode
                   ? 'Cancel'
                   : 'Edit Profile'
-              }
-              onClick={
-                () => setEditMode(!editMode)
-              }
-            />
+                }
+                onClick={
+                  () => setEditMode(!editMode)
+                }
+              />
+            }
           </div>
         </Grid.Column>
 

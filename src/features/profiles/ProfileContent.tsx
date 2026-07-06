@@ -1,6 +1,7 @@
 import { Tab } from 'semantic-ui-react'
 import ProfileAbout from './ProfileAbout'
 import { Profile } from '../../app/types/profile'
+import ProfilePhotos from './ProfilePhotos'
 
 type Props = {
   profile: Profile
@@ -29,7 +30,12 @@ export default function ProfileContent({
     },
     {
       menuItem: 'Photos',
-      render: () => <div style={contentStyle}>Photos</div>
+      render: () => (
+        <ProfilePhotos
+          profile={profile}
+          contentStyle={contentStyle}
+        />
+      )
     },
     {
       menuItem: 'Events',
