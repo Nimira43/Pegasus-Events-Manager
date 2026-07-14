@@ -3,6 +3,7 @@ import { Button, Card, Grid, Header, Image } from 'semantic-ui-react'
 import { Profile } from '../../app/types/profile'
 import { TbPhoto, TbTrash } from 'react-icons/tb'
 import { auth } from '../../app/config/firebase'
+import PhotoUpload from './PhotoUpload'
 
 type Props = {
   profile: Profile
@@ -63,7 +64,7 @@ export default function ProfilePhotos({ profile, contentStyle }: Props) {
 
         <Grid.Column width={16}>
           {editMode ? (
-            <p>Photo Uploads</p>
+            <PhotoUpload />
           ) : (
             <>
               <Card.Group itemsPerRow={5}>
