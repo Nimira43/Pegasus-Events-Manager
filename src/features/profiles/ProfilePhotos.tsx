@@ -64,7 +64,10 @@ export default function ProfilePhotos({ profile, contentStyle }: Props) {
 
         <Grid.Column width={16}>
           {editMode ? (
-            <PhotoUpload />
+            <PhotoUpload
+              profile={profile}
+              setEditMode={setEditMode}
+            />
           ) : (
             <>
               <Card.Group itemsPerRow={5}>
