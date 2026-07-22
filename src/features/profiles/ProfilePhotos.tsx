@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Card, Grid, Header, Image } from 'semantic-ui-react'
 import { Profile } from '../../app/types/profile'
 import { TbPhoto, TbTrash } from 'react-icons/tb'
 import { auth } from '../../app/config/firebase'
 import PhotoUpload from './PhotoUpload'
+import { useAppSelector } from '../../app/store/store'
+import { useFireStore } from '../../app/hooks/firestore/useFirestore'
+import { actions } from './photosSlice'
 
 type Props = {
   profile: Profile
@@ -13,6 +16,12 @@ type Props = {
 export default function ProfilePhotos({ profile, contentStyle }: Props) {
   const [editMode, setEditMode] = useState(false)
   const isCurrentUser = auth.currentUser?.uid === profile.id
+  const { data: photos, status } = useAppSelector(state => state.photos)
+  const { loadCollection } = useFireStore(`profiles/${profile.id}/photos`)
+  
+  useEffect(() => {
+    loadCollection(actions)
+  }, [loadCollection])
   
   return (
     <div style={contentStyle}>
@@ -71,8 +80,9 @@ export default function ProfilePhotos({ profile, contentStyle }: Props) {
           ) : (
             <>
               <Card.Group itemsPerRow={5}>
-                <Card>
-                  <Image src='/user.png' />
+                {photos.map(photos => (
+                  <Card key={photos.id}>
+                    <Image src={photos.url} />
                     {isCurrentUser &&                      
                       <Button.Group>
                         <Button basic>
@@ -84,7 +94,8 @@ export default function ProfilePhotos({ profile, contentStyle }: Props) {
                         </Button>
                       </Button.Group>   
                     }  
-                </Card>
+                  </Card>
+                ))}
               </Card.Group>
             </>
           )}
